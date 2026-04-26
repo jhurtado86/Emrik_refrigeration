@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emrik Refrigeration | HVAC & Refrigeration Services</title>
+  <meta name="description" content="Fast, reliable HVAC and refrigeration repair in your area. Licensed, insured, residential & commercial. Call now for same-day service." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy:    { DEFAULT: '#0A1628', 800: '#0D1E36', 700: '#122540', 600: '#172D4D' },
+            charcoal:{ DEFAULT: '#1E2A3A', 700: '#253040', 600: '#2C3A4D' },
+            cobalt:  { DEFAULT: '#1A4A8C', 400: '#2B5FAA', 300: '#3D76C8', 200: '#C8D8F0' },
+            scarlet: { DEFAULT: '#C8353A', 400: '#D45C60', 300: '#DC8385' },
+            slate:   { light: '#5C6B82', muted: '#8A96A8' },
+            ink:     { DEFAULT: '#0D1F35' },
+          },
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            body:    ['Inter', 'sans-serif'],
+          },
+          boxShadow: {
+            'card':    '0 2px 8px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)',
+            'card-lg': '0 8px 32px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.05)',
+            'glow':    '0 0 28px rgba(26,74,140,0.14)',
+            'cta':     '0 4px 20px rgba(200,53,58,0.30)',
+          },
+          letterSpacing: {
+            tight: '-0.03em',
+          },
+          lineHeight: {
+            body: '1.7',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #fff; color: #0D1F35; }
+    h1,h2,h3,h4 { font-family: 'Syne', sans-serif; }
+
+    /* ── Light section backgrounds ── */
+    /* White sections (services, contact, service area) */
+    .section-dark {
+      background: #FFFFFF;
+    }
+    /* Blue-tint sections (trust bar context, why-us, reviews, homes/biz) */
+    .section-mid {
+      background:
+        radial-gradient(ellipse 100% 60% at 50% 0%, rgba(26,74,140,0.038) 0%, transparent 55%),
+        #EBF0F9;
+    }
+
+    /* ── Dark sections (footer, final CTA) ── */
+    .dark-section { background: #0A1628; }
+    .dark-section .text-white  { color: #fff !important; }
+    .dark-section .text-cobalt { color: #3D76C8 !important; }
+    /* Legacy dark card classes — no longer used but kept safe */
+    .card-dark-body { color: #8A96A8; line-height: 1.7; }
+    .card-dark-list-item { color: #A0B0C4; }
+    .card-dark-list-item svg { stroke: #3D76C8 !important; }
+
+    /* ── Split cards — light theme (Built for Homes section) ── */
+    .split-card {
+      background: #fff;
+      border: 1.5px solid rgba(26,74,140,0.10);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow:
+        0 1px 3px rgba(0,0,0,0.04),
+        0 8px 32px rgba(26,74,140,0.08),
+        0 0 0 1px rgba(26,74,140,0.04);
+      transition: transform 0.24s cubic-bezier(0.34,1.56,0.64,1),
+                  box-shadow 0.24s cubic-bezier(0.4,0,0.2,1);
+    }
+    .split-card:hover {
+      transform: translateY(-5px);
+      box-shadow:
+        0 4px 16px rgba(0,0,0,0.07),
+        0 24px 56px rgba(26,74,140,0.12),
+        0 0 0 1.5px rgba(26,74,140,0.14);
+    }
+    .split-card-img { position: relative; height: 220px; overflow: hidden; }
+    .split-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .split-card-body { padding: 32px; }
+    .split-card-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 22px; color: #0D1F35; margin-bottom: 10px; }
+    .split-card-desc { color: #374760; line-height: 1.72; margin-bottom: 22px; font-size: 15px; }
+    .split-card-list { list-style: none; padding: 0; margin: 0 0 28px 0; }
+    .split-card-list li { display: flex; align-items: center; gap: 11px; color: #374760; font-size: 14px; margin-bottom: 11px; }
+
+    /* ── Accent badges for split cards ── */
+    .badge-cobalt {
+      background: rgba(26,74,140,0.12);
+      border: 1px solid rgba(26,74,140,0.24);
+      color: #1A4A8C;
+      border-radius: 100px; padding: 5px 14px;
+      font-size: 12px; font-weight: 600;
+      display: inline-flex; align-items: center; gap: 5px;
+      backdrop-filter: blur(8px);
+    }
+    .badge-scarlet {
+      background: rgba(200,53,58,0.10);
+      border: 1px solid rgba(200,53,58,0.26);
+      color: #B82D31;
+      border-radius: 100px; padding: 5px 14px;
+      font-size: 12px; font-weight: 600;
+      display: inline-flex; align-items: center; gap: 5px;
+      backdrop-filter: blur(8px);
+    }
+
+    /* ── Divider upgrade — cobalt tint, more refined ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(26,74,140,0.12) 30%, rgba(26,74,140,0.12) 70%, transparent 100%);
+    }
+
+    /* ── Dark CTA smooth entrance ramp (top gradient) ── */
+    .dark-cta-ramp {
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 90px; pointer-events: none; z-index: 3;
+      background: linear-gradient(180deg, rgba(255,255,255,0.055) 0%, transparent 100%);
+    }
+
+    /* ── Form label override — dark navy on light form card ── */
+    .form-card label { color: #1E2D42 !important; font-weight: 500; }
+    .form-card .text-slate-light { color: #4B5A6E !important; }
+    /* ── Service area card ── */
+    .area-card {
+      background: linear-gradient(135deg, rgba(26,74,140,0.04) 0%, rgba(26,74,140,0.015) 100%), #fff;
+      border: 1px solid rgba(26,74,140,0.12);
+      border-radius: 18px;
+      padding: 36px 40px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 32px rgba(26,74,140,0.08), 0 0 0 1px rgba(26,74,140,0.06);
+    }
+    .area-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: linear-gradient(135deg, #1A4A8C, #2B5FAA);
+      box-shadow: 0 0 6px rgba(26,74,140,0.40);
+      flex-shrink: 0;
+    }
+    /* ── Contact form card ── */
+    .form-card {
+      background: linear-gradient(145deg, #ffffff 0%, #F8FAFD 100%);
+      border: 1px solid rgba(13,31,53,0.09);
+      border-radius: 20px;
+      padding: 36px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06), 0 24px 64px rgba(26,74,140,0.09), 0 1px 0 rgba(255,255,255,0.8) inset;
+    }
+    /* ── Trust bar icon upgrade ── */
+    .trust-icon {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, rgba(26,74,140,0.10) 0%, rgba(26,74,140,0.06) 100%);
+      border: 1px solid rgba(26,74,140,0.14);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(26,74,140,0.09), inset 0 1px 0 rgba(255,255,255,0.60);
+    }
+    .dark-section .text-slate-light { color: #8FA3BE !important; }
+    .dark-section .btn-outline { color: #fff; border-color: rgba(255,255,255,0.28); }
+    .dark-section .btn-outline:hover { border-color: rgba(255,255,255,0.60); background: rgba(255,255,255,0.06); }
+    .dark-section .divider { background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent); }
+    .dark-section .section-title-accent { background: linear-gradient(90deg, transparent 0%, #C8353A 25%, #C8353A 75%, transparent 100%); }
+
+    /* ── Light section text overrides (Tailwind text-white → dark) ── */
+    .section-dark .text-white,
+    .section-mid  .text-white { color: #0D1F35; }
+    /* Upgraded from #5C6B82 → #4B5A6E for stronger contrast on tinted bg */
+    .section-dark .text-slate-light,
+    .section-mid  .text-slate-light { color: #4B5A6E; }
+    /* Hero is dark — let text-white be truly white, lighten muted tones */
+    .hero-bg .text-slate-light { color: #8A96A8; }
+    .hero-bg .text-cobalt      { color: #3D76C8; }
+
+    /* ── Nav — barely-there at top, frosted glass on scroll ── */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      background: rgba(6,10,20,0.18);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: background 0.40s cubic-bezier(0.4,0,0.2,1),
+                  border-color 0.40s cubic-bezier(0.4,0,0.2,1),
+                  box-shadow 0.40s cubic-bezier(0.4,0,0.2,1);
+    }
+    /* At top — light text over dark hero */
+    #navbar .text-slate-light { color: rgba(255,255,255,0.68) !important; }
+    #navbar .hover\:text-white:hover { color: rgba(255,255,255,1) !important; }
+    #navbar #hamburger { color: rgba(255,255,255,0.80) !important; border-color: rgba(255,255,255,0.18) !important; }
+    #navbar .nav-logo { filter: invert(1) brightness(1.1); }
+    #mobile-menu { background: rgba(8,13,26,0.92); backdrop-filter: blur(18px); }
+    #mobile-menu a.mobile-nav-link { color: rgba(255,255,255,0.68) !important; }
+    #mobile-menu a.mobile-nav-link:hover { color: rgba(255,255,255,1) !important; background: rgba(255,255,255,0.06) !important; }
+    #mobile-menu { border-top-color: rgba(255,255,255,0.08) !important; }
+
+    /* Scrolled — frosted glass, not solid white */
+    #navbar.scrolled {
+      background: rgba(255,255,255,0.72);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border-bottom-color: rgba(13,31,53,0.07);
+      box-shadow: 0 1px 24px rgba(0,0,0,0.06);
+    }
+    #navbar.scrolled .text-slate-light { color: #5C6B82 !important; }
+    #navbar.scrolled .hover\:text-white:hover { color: #0D1F35 !important; }
+    #navbar.scrolled #hamburger { color: #0D1F35 !important; border-color: rgba(13,31,53,0.16) !important; }
+    #navbar.scrolled .nav-logo { filter: none; }
+    #navbar.scrolled #mobile-menu { background: #fff; }
+    #navbar.scrolled #mobile-menu a.mobile-nav-link { color: #5C6B82 !important; }
+    #navbar.scrolled #mobile-menu a.mobile-nav-link:hover { color: #0D1F35 !important; background: rgba(13,31,53,0.04) !important; }
+    #navbar.scrolled #mobile-menu { border-top-color: rgba(13,31,53,0.08) !important; }
+
+    /* ── Nav animated underline ── */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 2px; background: #1A4A8C;
+      transition: width 0.25s cubic-bezier(0.4,0,0.2,1);
+    }
+    .nav-link:hover::after { width: 100%; }
+
+    /* ── Hero (dark, layered) ── */
+    .hero-bg {
+      background: #0A0F1E; /* L1: deep navy base */
+    }
+    /* L5: dot grid at reduced intensity — depth texture, not dominant */
+    .hero-dots {
+      background-image: radial-gradient(rgba(59,118,200,0.065) 1px, transparent 1px);
+      background-size: 32px 32px;
+      -webkit-mask-image: radial-gradient(ellipse 85% 80% at 50% 50%, transparent 20%, black 90%);
+      mask-image: radial-gradient(ellipse 85% 80% at 50% 50%, transparent 20%, black 90%);
+    }
+    /* L2: cobalt spotlight — illuminates headline from left-center */
+    .hero-layer-spotlight {
+      background: radial-gradient(ellipse 72% 65% at 33% 42%, rgba(27,58,107,0.40) 0%, transparent 65%);
+    }
+    /* L3: warm ember — bottom-right tension (felt, not obvious) */
+    .hero-layer-ember {
+      background: radial-gradient(ellipse 52% 48% at 97% 90%, rgba(139,26,26,0.25) 0%, transparent 58%);
+    }
+    /* L4: CTA accent glow — visual magnetism toward button cluster */
+    .hero-layer-cta-glow {
+      background: radial-gradient(ellipse 40% 36% at 22% 78%, rgba(200,53,58,0.15) 0%, transparent 55%);
+    }
+    /* Edge vignette — corners darken, center stays bright */
+    .hero-vignette {
+      background: radial-gradient(ellipse 125% 110% at 50% 50%, transparent 30%, rgba(0,0,0,0.42) 100%);
+      pointer-events: none;
+    }
+    /* Trust badges — adapted for dark hero bg */
+    .hero-bg .trust-badge {
+      background: rgba(59,118,200,0.12);
+      border-color: rgba(59,118,200,0.25);
+      color: #C8D8F0;
+    }
+    /* Outline button — light treatment on dark bg */
+    .hero-bg .btn-outline {
+      color: rgba(255,255,255,0.88);
+      border-color: rgba(255,255,255,0.20);
+    }
+    .hero-bg .btn-outline:hover {
+      border-color: rgba(59,118,200,0.50);
+      background: rgba(26,74,140,0.14);
+      transform: translateY(-2px);
+    }
+    /* Geometric accent line — single diagonal, desktop only */
+    .hero-geometric-line {
+      position: absolute;
+      top: 22%;
+      left: -6%;
+      width: 76%;
+      height: 1.5px;
+      background: linear-gradient(90deg, transparent 0%, rgba(27,58,107,0.10) 20%, rgba(27,58,107,0.10) 80%, transparent 100%);
+      transform: rotate(17deg);
+      transform-origin: left center;
+      pointer-events: none;
+    }
+    /* Image border glow — slow opacity pulse only (no transform) */
+    @keyframes hero-img-pulse {
+      0%, 100% { opacity: 0.50; }
+      50%       { opacity: 1; }
+    }
+    .hero-img-glow-ring {
+      animation: hero-img-pulse 3.5s ease-in-out infinite;
+    }
+
+    /* ── Buttons ── */
+    .btn-primary {
+      background: #C8353A;
+      color: #fff;
+      font-weight: 700;
+      border-radius: 8px;
+      padding: 14px 28px;
+      font-size: 15px;
+      letter-spacing: 0.01em;
+      box-shadow: 0 4px 18px rgba(200,53,58,0.30);
+      transition: transform 0.18s cubic-bezier(0.4,0,0.2,1),
+                  box-shadow 0.18s cubic-bezier(0.4,0,0.2,1),
+                  background 0.18s cubic-bezier(0.4,0,0.2,1);
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover  { background: #D64045; transform: translateY(-2px); box-shadow: 0 8px 26px rgba(200,53,58,0.38); }
+    .btn-primary:active { transform: translateY(0); box-shadow: 0 2px 10px rgba(200,53,58,0.22); }
+    .btn-primary:focus-visible { outline: 2px solid #C8353A; outline-offset: 3px; }
+
+    .btn-outline {
+      background: transparent;
+      color: #0D1F35;
+      font-weight: 600;
+      border: 1.5px solid rgba(13,31,53,0.22);
+      border-radius: 8px;
+      padding: 13px 28px;
+      font-size: 15px;
+      transition: transform 0.18s cubic-bezier(0.4,0,0.2,1),
+                  border-color 0.18s cubic-bezier(0.4,0,0.2,1),
+                  background 0.18s cubic-bezier(0.4,0,0.2,1);
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-outline:hover  { border-color: #1A4A8C; background: rgba(26,74,140,0.05); transform: translateY(-2px); }
+    .btn-outline:active { transform: translateY(0); }
+    .btn-outline:focus-visible { outline: 2px solid #1A4A8C; outline-offset: 3px; }
+
+    /* ── Cards ── */
+    .service-card {
+      background: #fff;
+      border: 1px solid rgba(13,31,53,0.07);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.06), 0 0 0 1px rgba(26,74,140,0.04);
+      transition: transform 0.24s cubic-bezier(0.34,1.56,0.64,1),
+                  box-shadow 0.24s cubic-bezier(0.4,0,0.2,1),
+                  border-color 0.24s cubic-bezier(0.4,0,0.2,1);
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 20px 48px rgba(26,74,140,0.13), 0 0 0 1.5px rgba(26,74,140,0.20);
+      border-color: transparent;
+    }
+    .service-card:focus-visible { outline: 2px solid #1A4A8C; outline-offset: 3px; }
+
+    .feature-card {
+      background: #fff;
+      border: 1px solid rgba(13,31,53,0.07);
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.06);
+      transition: transform 0.24s cubic-bezier(0.34,1.56,0.64,1),
+                  box-shadow 0.24s cubic-bezier(0.4,0,0.2,1);
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 16px 36px rgba(26,74,140,0.11);
+    }
+
+    .review-card {
+      background: #fff;
+      border: 1px solid rgba(13,31,53,0.07);
+      border-radius: 18px;
+      padding: 36px 32px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 28px rgba(0,0,0,0.07);
+      transition: transform 0.24s cubic-bezier(0.34,1.56,0.64,1),
+                  box-shadow 0.24s cubic-bezier(0.4,0,0.2,1);
+    }
+    /* Decorative opening quote mark */
+    .review-card::before {
+      content: '\201C';
+      position: absolute;
+      top: 12px; right: 22px;
+      font-size: 80px;
+      line-height: 1;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      color: rgba(26,74,140,0.055);
+      pointer-events: none;
+      user-select: none;
+    }
+    .review-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 20px 44px rgba(0,0,0,0.10);
+    }
+
+    /* ── Badges & accents ── */
+    .trust-badge {
+      background: rgba(26,74,140,0.07);
+      border: 1px solid rgba(26,74,140,0.15);
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #1A4A8C;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+
+    .section-title-accent {
+      display: inline-block;
+      width: 64px; height: 3px;
+      background: linear-gradient(90deg, transparent 0%, #C8353A 25%, #C8353A 75%, transparent 100%);
+      border-radius: 2px;
+      margin-bottom: 12px;
+    }
+
+    /* .divider defined below with cobalt tint upgrade */
+
+    .icon-wrap {
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, rgba(26,74,140,0.10) 0%, rgba(26,74,140,0.06) 100%);
+      border: 1px solid rgba(26,74,140,0.14);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(26,74,140,0.09), inset 0 1px 0 rgba(255,255,255,0.60);
+    }
+    /* Animated arrow on "learn more" type links */
+    .link-arrow {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: 600;
+      color: #1A4A8C;
+      transition: color 0.18s cubic-bezier(0.4,0,0.2,1),
+                  gap 0.18s cubic-bezier(0.4,0,0.2,1);
+    }
+    .link-arrow:hover { color: #2B5FAA; gap: 10px; }
+    .link-arrow:focus-visible { outline: 2px solid #1A4A8C; outline-offset: 2px; border-radius: 4px; }
+
+    /* ── Stars ── */
+    .stars { color: #F59E0B; letter-spacing: 1px; }
+
+    /* ── Forms ── */
+    .form-field {
+      background: #fff;
+      border: 1.5px solid rgba(13,31,53,0.14);
+      border-radius: 8px;
+      padding: 13px 16px;
+      color: #0D1F35;
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      width: 100%;
+      transition: border-color 0.18s cubic-bezier(0.4,0,0.2,1),
+                  box-shadow 0.18s cubic-bezier(0.4,0,0.2,1);
+      outline: none;
+    }
+    .form-field::placeholder { color: rgba(13,31,53,0.32); }
+    .form-field:focus { border-color: #1A4A8C; box-shadow: 0 0 0 3px rgba(26,74,140,0.10); }
+
+    /* ── Mobile menu ── */
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+
+    /* ── Scroll animations ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.55s cubic-bezier(0.4,0,0.2,1),
+                  transform 0.55s cubic-bezier(0.4,0,0.2,1);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Phone pulse (red — CTA) ── */
+    .phone-pulse { animation: pulse-ring 2.5s cubic-bezier(0.4,0,0.6,1) infinite; }
+    @keyframes pulse-ring {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(200,53,58,0.4); }
+      50%       { box-shadow: 0 0 0 10px rgba(200,53,58,0); }
+    }
+
+    /* ── Floating call button ── */
+    .floating-call { position: fixed; bottom: 24px; right: 20px; z-index: 100; }
+
+    /* ── Logo sizing ── */
+    .nav-logo { height: 52px; width: auto; }
+    @media (min-width: 768px) { .nav-logo { height: 64px; } }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #F4F7FA; }
+    ::-webkit-scrollbar-thumb { background: #D0D8E4; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #1A4A8C; }
+  </style>
+</head>
+<body class="font-body leading-body">
+
+  <!-- ============================================================
+       STICKY NAVIGATION
+  ============================================================ -->
+  <nav id="navbar" class="py-2">
+    <div class="max-w-6xl mx-auto px-5 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group" aria-label="Emrik Refrigeration home">
+        <img src="brand_assets/emrik-logo.png" alt="Emrik Refrigeration and AC" class="nav-logo" />
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-7">
+        <a href="#services" class="nav-link text-sm font-medium text-slate-light hover:text-white transition-colors duration-150">Services</a>
+        <a href="#why-us" class="nav-link text-sm font-medium text-slate-light hover:text-white transition-colors duration-150">Why Us</a>
+        <a href="#reviews" class="nav-link text-sm font-medium text-slate-light hover:text-white transition-colors duration-150">Reviews</a>
+        <a href="#contact" class="nav-link text-sm font-medium text-slate-light hover:text-white transition-colors duration-150">Contact</a>
+        <a href="tel:+13618153667" class="btn-primary text-sm py-2.5 px-5 phone-pulse ml-4">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.54 6.54l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (361) 815-3667
+        </a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button id="hamburger" class="md:hidden p-2 rounded-lg border border-white/10 text-white hover:border-cobalt/40 transition-colors duration-150 focus-visible:outline-cobalt" aria-label="Open menu">
+        <svg id="hamburger-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden px-5 pb-4 mt-3 border-t border-white/10">
+      <div class="flex flex-col gap-1 pt-4">
+        <a href="#services" class="mobile-nav-link py-3 px-3 rounded-lg text-slate-light hover:text-white hover:bg-white/5 transition-colors duration-150 font-medium">Services</a>
+        <a href="#why-us" class="mobile-nav-link py-3 px-3 rounded-lg text-slate-light hover:text-white hover:bg-white/5 transition-colors duration-150 font-medium">Why Us</a>
+        <a href="#reviews" class="mobile-nav-link py-3 px-3 rounded-lg text-slate-light hover:text-white hover:bg-white/5 transition-colors duration-150 font-medium">Reviews</a>
+        <a href="#contact" class="mobile-nav-link py-3 px-3 rounded-lg text-slate-light hover:text-white hover:bg-white/5 transition-colors duration-150 font-medium">Contact</a>
+        <a href="tel:+13618153667" class="btn-primary mt-3 justify-center">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.54 6.54l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call (361) 815-3667
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       SECTION 1: HERO
+  ============================================================ -->
+  <section class="hero-bg relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden" aria-label="Hero">
+    <!-- ── Background layer system ── -->
+    <div class="absolute inset-0 z-0">
+      <!-- L2: Cobalt spotlight — illuminates headline area -->
+      <div class="hero-layer-spotlight absolute inset-0"></div>
+      <!-- L3: Warm ember — bottom-right, clipped by section overflow-hidden -->
+      <div class="hero-layer-ember absolute inset-0"></div>
+      <!-- L4: CTA accent glow — draws eye toward button cluster -->
+      <div class="hero-layer-cta-glow absolute inset-0"></div>
+      <!-- L5: Dot grid texture (reduced intensity) -->
+      <div class="hero-dots absolute inset-0"></div>
+    </div>
+    <!-- Vignette overlay — corners dark, center clear -->
+    <div class="hero-vignette absolute inset-0 z-[1]"></div>
+    <!-- Geometric accent — single diagonal line, desktop only -->
+    <div class="hero-geometric-line hidden md:block" style="z-index: 2;"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-5 w-full">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Left: Copy -->
+        <div class="fade-up">
+          <!-- Trust badges -->
+          <div class="flex flex-wrap gap-2 mb-8">
+            <span class="trust-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Licensed & Insured
+            </span>
+            <span class="trust-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Same-Day Service
+            </span>
+            <span class="trust-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              Residential & Commercial
+            </span>
+          </div>
+
+          <h1 class="font-display text-5xl lg:text-6xl font-800 leading-none tracking-tight text-white mb-6" style="letter-spacing: -0.03em; line-height: 1.05;">
+            Fast, Reliable<br />
+            <span class="text-cobalt">HVAC & Refrigeration</span><br />
+            Service You Can<br />Trust
+          </h1>
+
+          <p class="text-slate-light text-lg mb-8 max-w-lg" style="line-height: 1.7;">
+            Emrik Refrigeration delivers expert AC, heating, and commercial refrigeration service — when you need it most. Honest pricing, experienced technicians, no runaround.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap gap-4 mb-10">
+            <a href="tel:+13618153667" class="btn-primary text-base px-7 py-4">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.54 6.54l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Call Now — (361) 815-3667
+            </a>
+            <a href="#contact" class="btn-outline text-base px-7 py-4">
+              Get a Free Estimate
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+
+          <!-- Stats row -->
+          <div class="flex flex-wrap gap-8">
+            <div>
+              <div class="font-display font-700 text-2xl text-white">24/7</div>
+              <div class="text-slate-light text-sm mt-0.5">Emergency Service</div>
+            </div>
+            <div class="w-px" style="background:rgba(255,255,255,0.12);"></div>
+            <div>
+              <div class="font-display font-700 text-2xl text-white">Licensed</div>
+              <div class="text-slate-light text-sm mt-0.5">&amp; Insured</div>
+            </div>
+            <div class="w-px" style="background:rgba(255,255,255,0.12);"></div>
+            <div>
+              <div class="font-display font-700 text-2xl text-white">Free</div>
+              <div class="text-slate-light text-sm mt-0.5">Estimates</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Hero image card -->
+        <div class="fade-up relative hidden lg:block" style="transition-delay: 0.1s;">
+          <!-- Animated cobalt glow halo — pulses on opacity only -->
+          <div class="hero-img-glow-ring absolute rounded-2xl pointer-events-none" style="inset: -3px; box-shadow: 0 0 40px rgba(27,58,107,0.50), 0 0 80px rgba(27,58,107,0.18); z-index: 0;"></div>
+          <div class="relative rounded-2xl overflow-hidden" style="z-index: 1; border: 1px solid rgba(59,118,200,0.30); box-shadow: 0 20px 52px rgba(0,0,0,0.60), 0 4px 16px rgba(0,0,0,0.40);">
+            <img
+              src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=580&h=460&q=80"
+              alt="Professional HVAC technician at work"
+              class="w-full object-cover block"
+              style="height: 460px;"
+            />
+            <!-- Dark vignette gradient -->
+            <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(10,16,30,0.08) 0%, rgba(10,16,30,0.62) 100%);"></div>
+            <!-- Blue tint overlay — stronger than before -->
+            <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(27,58,107,0.38) 0%, transparent 52%);"></div>
+            <!-- Red accent bar at bottom of image -->
+            <div class="absolute bottom-0 left-0 right-0" style="height: 3px; background: linear-gradient(90deg, #C8353A 0%, rgba(200,53,58,0.2) 100%);"></div>
+
+            <!-- Floating badge on image -->
+            <div class="absolute bottom-6 left-6 right-6">
+              <div class="rounded-xl p-4" style="background: rgba(10,22,40,0.88); backdrop-filter: blur(12px); border: 1px solid rgba(26,74,140,0.2);">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-cobalt/20 border border-cobalt/30 flex items-center justify-center flex-shrink-0">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </div>
+                  <div>
+                    <div class="text-white font-semibold text-sm">24/7 Emergency Service</div>
+                    <div class="text-slate-light text-xs mt-0.5">We answer every call, day or night</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- Red accent bridge — guides eye from dark hero into light trust bar -->
+    <div class="absolute bottom-0 left-0 right-0 z-20" style="height:4px; background: linear-gradient(90deg, transparent 0%, #C8353A 18%, #C8353A 82%, transparent 100%); opacity:0.90;"></div>
+  </section>
+
+  <!-- ============================================================
+       TRUST BAR
+  ============================================================ -->
+  <div class="divider"></div>
+  <section class="section-mid py-8" aria-label="Trust indicators">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="flex items-center gap-3">
+          <div class="trust-icon">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <span class="text-sm font-semibold" style="color:#0D1F35;">Licensed &amp; Insured</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="trust-icon">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <span class="text-sm font-semibold" style="color:#0D1F35;">Same-Day Availability</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="trust-icon">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <span class="text-sm font-semibold" style="color:#0D1F35;">Upfront Honest Pricing</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="trust-icon">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <span class="text-sm font-semibold" style="color:#0D1F35;">Certified Technicians</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="divider"></div>
+
+  <!-- ============================================================
+       SECTION 2: SERVICES
+  ============================================================ -->
+  <section id="services" class="section-dark py-20" aria-label="Our services">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="text-center mb-14 fade-up">
+        <div class="flex justify-center mb-3">
+          <div class="section-title-accent"></div>
+        </div>
+        <h2 class="font-display text-4xl lg:text-5xl font-700 text-white mb-4" style="letter-spacing: -0.03em;">
+          Everything HVAC &amp; Refrigeration
+        </h2>
+        <p class="text-slate-light text-lg max-w-2xl mx-auto" style="line-height: 1.7;">
+          From emergency breakdowns to scheduled maintenance — we handle it all for homes and businesses across the area.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <!-- AC Repair & Install -->
+        <div class="service-card fade-up">
+          <div class="icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2" stroke-linecap="round">
+              <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07"/>
+            </svg>
+          </div>
+          <h3 class="font-display font-700 text-white text-xl mb-2">AC Repair &amp; Installation</h3>
+          <p class="text-slate-light text-sm" style="line-height: 1.7;">Fast diagnostics and repairs on all major AC brands. New system installs sized and quoted correctly — no upsells, no surprises.</p>
+          <a href="#contact" class="link-arrow mt-5">
+            Learn more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+
+        <!-- Heating -->
+        <div class="service-card fade-up" style="transition-delay: 0.05s;">
+          <div class="icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2" stroke-linecap="round">
+              <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+            </svg>
+          </div>
+          <h3 class="font-display font-700 text-white text-xl mb-2">Heating Repair &amp; Installation</h3>
+          <p class="text-slate-light text-sm" style="line-height: 1.7;">Furnace, heat pump, and boiler repair and replacement. We keep you warm when it counts — fast response, first-time fixes.</p>
+          <a href="#contact" class="link-arrow mt-5">
+            Learn more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+
+        <!-- Preventative Maintenance -->
+        <div class="service-card fade-up" style="transition-delay: 0.10s;">
+          <div class="icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2" stroke-linecap="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h3 class="font-display font-700 text-white text-xl mb-2">Preventative Maintenance</h3>
+          <p class="text-slate-light text-sm" style="line-height: 1.7;">Seasonal tune-ups that extend equipment life and catch small issues before they become expensive problems. Save money, avoid breakdowns.</p>
+          <a href="#contact" class="link-arrow mt-5">
+            Learn more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+
+        <!-- Refrigeration Repair -->
+        <div class="service-card fade-up" style="transition-delay: 0.15s;">
+          <div class="icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2" stroke-linecap="round">
+              <rect x="2" y="3" width="20" height="8" rx="2"/><rect x="2" y="13" width="20" height="8" rx="2"/>
+              <line x1="6" y1="7" x2="6" y2="7"/><line x1="6" y1="17" x2="6" y2="17"/>
+            </svg>
+          </div>
+          <h3 class="font-display font-700 text-white text-xl mb-2">Refrigeration Repair</h3>
+          <p class="text-slate-light text-sm" style="line-height: 1.7;">Residential and light commercial refrigerator, freezer, and cold storage unit repairs. Quick turnarounds to protect your food and inventory.</p>
+          <a href="#contact" class="link-arrow mt-5">
+            Learn more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+
+        <!-- Commercial Refrigeration -->
+        <div class="service-card fade-up" style="transition-delay: 0.20s;">
+          <div class="icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2" stroke-linecap="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <h3 class="font-display font-700 text-white text-xl mb-2">Commercial Refrigeration</h3>
+          <p class="text-slate-light text-sm" style="line-height: 1.7;">Walk-ins, reach-ins, display cases, and commercial cooling systems. Downtime costs money — we move fast on commercial calls.</p>
+          <a href="#contact" class="link-arrow mt-5">
+            Learn more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+
+        <!-- Emergency Service -->
+        <div class="service-card fade-up" style="transition-delay: 0.25s; border-color: rgba(26,74,140,0.25);">
+          <div class="icon-wrap" style="background: rgba(26,74,140,0.15); border-color: rgba(26,74,140,0.30);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2" stroke-linecap="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <div class="flex items-center gap-2 mb-2">
+            <h3 class="font-display font-700 text-white text-xl">Emergency Service</h3>
+            <span class="text-xs bg-cobalt/10 text-cobalt border border-cobalt/20 rounded-full px-2 py-0.5 font-medium">24/7</span>
+          </div>
+          <p class="text-slate-light text-sm" style="line-height: 1.7;">System down at midnight? We're available around the clock. Emergency HVAC and refrigeration response — no extra wait, no voicemail.</p>
+          <a href="tel:+13618153667" class="mt-5 flex items-center gap-2 text-cobalt text-sm font-medium">
+            Call now — (361) 815-3667
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 3: WHY CHOOSE US
+  ============================================================ -->
+  <section id="why-us" class="section-mid py-20" aria-label="Why choose Emrik Refrigeration">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <!-- Left copy -->
+        <div class="fade-up">
+          <div class="section-title-accent mb-3"></div>
+          <h2 class="font-display text-4xl lg:text-5xl font-700 text-white mb-5" style="letter-spacing:-0.03em; line-height:1.1;">
+            We Show Up.<br />We Fix It Right.<br /><span class="text-cobalt">First Time.</span>
+          </h2>
+          <p class="text-slate-light text-lg mb-8" style="line-height:1.7;">
+            There's no shortage of HVAC companies. What's rare is one that's honest, fast, and actually follows through. That's what Emrik Refrigeration has been doing for over 15 years.
+          </p>
+          <a href="tel:+13618153667" class="btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.54 6.54l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Talk to a Technician
+          </a>
+        </div>
+
+        <!-- Right features grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 fade-up" style="transition-delay:0.1s;">
+
+          <div class="feature-card">
+            <div class="icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h4 class="font-display font-700 text-white text-lg mb-2">Fast Response Times</h4>
+            <p class="text-slate-light text-sm" style="line-height:1.7;">Same-day and next-day appointments. Emergency calls answered in under 2 hours.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h4 class="font-display font-700 text-white text-lg mb-2">Upfront Pricing</h4>
+            <p class="text-slate-light text-sm" style="line-height:1.7;">You get a clear estimate before any work begins. No hidden fees, no surprises at the end.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h4 class="font-display font-700 text-white text-lg mb-2">Licensed &amp; Certified</h4>
+            <p class="text-slate-light text-sm" style="line-height:1.7;">All technicians are state-licensed, EPA-certified, and background checked.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h4 class="font-display font-700 text-white text-lg mb-2">Workmanship Guarantee</h4>
+            <p class="text-slate-light text-sm" style="line-height:1.7;">We stand behind every job. If something isn't right, we come back and make it right — period.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 4: CONTACT / LEAD FORM
+  ============================================================ -->
+  <section id="contact" class="section-dark py-20" aria-label="Contact and service request">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+
+        <!-- Left: Copy + phone -->
+        <div class="fade-up">
+          <div class="section-title-accent mb-3"></div>
+          <h2 class="font-display text-4xl lg:text-5xl font-700 text-white mb-5" style="letter-spacing:-0.03em; line-height:1.1;">
+            Request Service or<br /><span class="text-cobalt">Get a Free Quote</span>
+          </h2>
+          <p class="text-slate-light text-lg mb-8" style="line-height:1.7;">
+            Fill out the form and we'll be in touch right away. Need someone faster? Call us directly and we'll have a tech out same day.
+          </p>
+
+          <div class="space-y-5">
+            <div class="flex items-center gap-4">
+              <div class="icon-wrap flex-shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.54 6.54l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="text-white font-semibold">Call or Text</div>
+                <a href="tel:+13618153667" class="text-cobalt text-lg font-display font-700 hover:text-cobalt-300 transition-colors duration-150">(361) 815-3667</a>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="icon-wrap flex-shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="text-white font-semibold">Email Us</div>
+                <a href="mailto:emrikrefrigerationandac@gmail.com" class="text-cobalt text-sm hover:text-cobalt-300 transition-colors duration-150">emrikrefrigerationandac@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Form embed area -->
+        <div class="fade-up" style="transition-delay:0.1s;">
+          <div class="form-card">
+
+            <!-- ===================================================
+                 GHL CONTACT FORM EMBED LOCATION
+                 Replace everything inside this div with your
+                 GoHighLevel embed snippet, e.g.:
+                 <iframe src="https://..." ...></iframe>
+                 OR the GHL JS snippet + div placeholder.
+                 ================================================= -->
+            <div id="ghl-form-embed">
+              <!-- PLACEHOLDER FORM — Replace with GHL embed -->
+              <h3 class="font-display font-700 text-white text-2xl mb-1">Get a Free Estimate</h3>
+              <p class="text-slate-light text-sm mb-6">Instant response — we'll be in touch right away</p>
+
+              <form class="space-y-4" onsubmit="return false;">
+                <div class="grid grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-slate-light mb-1.5" for="fname">First Name</label>
+                    <input id="fname" type="text" placeholder="John" class="form-field" autocomplete="given-name" />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-slate-light mb-1.5" for="lname">Last Name</label>
+                    <input id="lname" type="text" placeholder="Smith" class="form-field" autocomplete="family-name" />
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-slate-light mb-1.5" for="phone">Phone Number</label>
+                  <input id="phone" type="tel" placeholder="(555) 000-0000" class="form-field" autocomplete="tel" />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-slate-light mb-1.5" for="email">Email Address</label>
+                  <input id="email" type="email" placeholder="john@email.com" class="form-field" autocomplete="email" />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-slate-light mb-1.5" for="service">Service Needed</label>
+                  <select id="service" class="form-field" style="background:#fff; cursor:pointer;">
+                    <option value="" disabled selected>Select a service…</option>
+                    <option>AC Repair</option>
+                    <option>AC Installation</option>
+                    <option>Heating Repair</option>
+                    <option>Heating Installation</option>
+                    <option>Preventative Maintenance</option>
+                    <option>Refrigeration Repair</option>
+                    <option>Commercial Refrigeration</option>
+                    <option>Emergency Service</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-slate-light mb-1.5" for="message">Describe Your Issue <span class="text-white/30">(optional)</span></label>
+                  <textarea id="message" rows="3" placeholder="Tell us what's going on…" class="form-field resize-none"></textarea>
+                </div>
+                <button type="submit" class="btn-primary w-full justify-center text-base py-4">
+                  Request Service — It's Free
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+                <p class="text-xs text-center text-white/30">No spam. No obligation. We'll be in touch right away.</p>
+              </form>
+            </div>
+            <!-- END GHL FORM EMBED -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 5: REVIEWS / SOCIAL PROOF
+  ============================================================ -->
+  <section id="reviews" class="section-mid py-20" aria-label="Customer reviews">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="text-center mb-14 fade-up">
+        <div class="flex justify-center mb-3">
+          <div class="section-title-accent"></div>
+        </div>
+        <h2 class="font-display text-4xl lg:text-5xl font-700 text-white mb-4" style="letter-spacing:-0.03em;">
+          What Our Customers Say
+        </h2>
+        <div class="flex items-center justify-center gap-2 mt-2">
+          <div class="stars text-lg">★★★★★</div>
+          <span class="text-white font-semibold">5.0 on Google</span>
+          <span class="text-slate-light text-sm">— Based on recent customer reviews</span>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+
+        <div class="review-card fade-up">
+          <div class="stars text-base mb-4">★★★★★</div>
+          <p class="text-white text-base mb-6" style="line-height:1.7;">
+            "Great HVAC service! The team replaced my unit in just a few hours, and now my entire house cools evenly. My electricity bill has even dropped by about half. Highly recommend!"
+          </p>
+          <div class="flex items-center gap-3 pt-5 border-t" style="border-color: rgba(255,255,255,0.07);">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center font-display font-700 text-navy text-sm flex-shrink-0" style="background: linear-gradient(135deg, #1A4A8C, #2B5FAA); color: #fff;">VG</div>
+            <div>
+              <div class="text-white font-semibold text-sm">Val Gonzales</div>
+              <div class="text-slate-light text-xs">Google Review</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card fade-up" style="transition-delay:0.07s;">
+          <div class="stars text-base mb-4">★★★★★</div>
+          <p class="text-white text-base mb-6" style="line-height:1.7;">
+            "The level of professionalism this company upholds is something I can hardly put into words. In the heat of summer my AC went out — I called Emrik and they were out the same day. They found the exact problem, ordered the part, and Rick was in my home installing it the same day it arrived. Haven't had an issue since. Unbeatable pricing."
+          </p>
+          <div class="flex items-center gap-3 pt-5 border-t" style="border-color: rgba(255,255,255,0.07);">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center font-display font-700 text-navy text-sm flex-shrink-0" style="background: linear-gradient(135deg, #1A4A8C, #2B5FAA); color: #fff;">SJ</div>
+            <div>
+              <div class="text-white font-semibold text-sm">Stephanie Jernigan</div>
+              <div class="text-slate-light text-xs">Google Review</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-8 fade-up" style="transition-delay:0.15s;">
+        <a href="https://www.google.com/search?q=Emrik+Refrigeration+reviews" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-slate-light text-sm hover:text-white transition-colors duration-150">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          See all reviews on Google
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 6: SERVICE AREA
+  ============================================================ -->
+  <section id="service-area" class="section-dark py-20" aria-label="Service area">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="text-center mb-12 fade-up">
+        <div class="flex justify-center mb-3">
+          <div class="section-title-accent"></div>
+        </div>
+        <h2 class="font-display text-4xl lg:text-5xl font-700 text-white mb-4" style="letter-spacing:-0.03em;">
+          Areas We Serve
+        </h2>
+        <p class="text-slate-light text-lg max-w-xl mx-auto">
+          Locally based and fast to dispatch across the region. Not sure if we cover your area? Call us — we'll let you know right away.
+        </p>
+      </div>
+
+      <div class="area-card fade-up">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-y-5 gap-x-8">
+          <div class="flex items-center gap-3">
+            <div class="area-dot"></div>
+            <span class="text-sm font-semibold" style="color:#0D1F35;">Corpus Christi</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="area-dot"></div>
+            <span class="text-sm font-semibold" style="color:#0D1F35;">San Antonio</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="area-dot"></div>
+            <span class="text-sm font-semibold" style="color:#0D1F35;">Victoria</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="area-dot"></div>
+            <span class="text-sm font-semibold" style="color:#0D1F35;">Portland</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="area-dot"></div>
+            <span class="text-sm font-semibold" style="color:#0D1F35;">Rockport</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="area-dot"></div>
+            <span class="text-sm font-semibold" style="color:#0D1F35;">Ingleside</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="area-dot"></div>
+            <span class="text-sm font-semibold" style="color:#0D1F35;">Kingsville</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="area-dot"></div>
+            <span class="text-sm font-semibold" style="color:#0D1F35;">Robstown</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 7: RESIDENTIAL + COMMERCIAL
+  ============================================================ -->
+  <section class="section-mid py-20" aria-label="Residential and commercial services">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="text-center mb-12 fade-up">
+        <div class="flex justify-center mb-3">
+          <div class="section-title-accent"></div>
+        </div>
+        <h2 class="font-display text-4xl lg:text-5xl font-700 text-white mb-4" style="letter-spacing:-0.03em;">
+          Built for Homes &amp;<br />Businesses
+        </h2>
+        <p class="text-slate-light text-lg max-w-xl mx-auto">
+          Whether it's a single-family home or a full commercial facility — we have the expertise and equipment to get the job done right.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Residential — light card, cobalt accent -->
+        <div class="split-card fade-up">
+          <div class="split-card-img">
+            <img src="https://placehold.co/620x220/C8D8EE/1A4A8C?text=Residential+HVAC" alt="Residential HVAC service" />
+            <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(10,22,40,0.04) 0%, rgba(10,22,40,0.52) 100%);"></div>
+            <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(26,74,140,0.18) 0%, transparent 55%);"></div>
+            <div class="absolute bottom-5 left-6">
+              <span class="badge-cobalt">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                Residential
+              </span>
+            </div>
+          </div>
+          <!-- Cobalt accent top strip -->
+          <div style="height:3px; background: linear-gradient(90deg, #1A4A8C 0%, rgba(26,74,140,0.12) 100%);"></div>
+          <div class="split-card-body">
+            <h3 class="split-card-title">For Homeowners</h3>
+            <p class="split-card-desc">Keep your family comfortable year-round. We handle everything from annual tune-ups to full system replacements — with the same care we'd give our own home.</p>
+            <ul class="split-card-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5" flex-shrink="0"><polyline points="20 6 9 17 4 12"/></svg> Central AC &amp; Heat Repair</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5" flex-shrink="0"><polyline points="20 6 9 17 4 12"/></svg> New System Installation</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5" flex-shrink="0"><polyline points="20 6 9 17 4 12"/></svg> Annual Maintenance Plans</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5" flex-shrink="0"><polyline points="20 6 9 17 4 12"/></svg> Indoor Air Quality Solutions</li>
+            </ul>
+            <a href="#contact" class="btn-primary text-sm py-3 px-6">Get a Home Estimate
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Commercial — light card, scarlet accent -->
+        <div class="split-card fade-up" style="transition-delay:0.1s;">
+          <div class="split-card-img">
+            <img src="https://placehold.co/620x220/BDD0E8/1A4A8C?text=Commercial+Refrigeration" alt="Commercial refrigeration service" />
+            <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(10,22,40,0.04) 0%, rgba(10,22,40,0.52) 100%);"></div>
+            <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(200,53,58,0.12) 0%, transparent 55%);"></div>
+            <div class="absolute bottom-5 left-6">
+              <span class="badge-scarlet">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                Commercial
+              </span>
+            </div>
+          </div>
+          <!-- Scarlet accent top strip -->
+          <div style="height:3px; background: linear-gradient(90deg, #C8353A 0%, rgba(200,53,58,0.12) 100%);"></div>
+          <div class="split-card-body">
+            <h3 class="split-card-title">For Businesses</h3>
+            <p class="split-card-desc">Downtime means lost revenue. We prioritize commercial calls and offer service contracts that keep your systems running so you can focus on business.</p>
+            <ul class="split-card-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5" flex-shrink="0"><polyline points="20 6 9 17 4 12"/></svg> Commercial HVAC Systems</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5" flex-shrink="0"><polyline points="20 6 9 17 4 12"/></svg> Walk-In Cooler &amp; Freezer Service</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5" flex-shrink="0"><polyline points="20 6 9 17 4 12"/></svg> Preventative Maintenance Contracts</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5" flex-shrink="0"><polyline points="20 6 9 17 4 12"/></svg> Priority Emergency Response</li>
+            </ul>
+            <a href="#contact" class="btn-primary text-sm py-3 px-6">Get a Commercial Quote
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 8: FINAL CTA
+  ============================================================ -->
+  <section class="dark-section relative py-24 overflow-hidden" aria-label="Final call to action">
+    <!-- Base dark layer -->
+    <div class="absolute inset-0" style="background: #080D1A;"></div>
+    <!-- Smooth entrance ramp from light section above -->
+    <div class="dark-cta-ramp"></div>
+    <!-- Cobalt spotlight — behind headline -->
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 70% 80% at 50% 40%, rgba(27,58,107,0.45) 0%, transparent 65%);"></div>
+    <!-- Warm ember — bottom corners, symmetric -->
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 50% 45% at 0% 100%, rgba(139,26,26,0.18) 0%, transparent 55%);"></div>
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 50% 45% at 100% 100%, rgba(139,26,26,0.14) 0%, transparent 55%);"></div>
+    <!-- CTA accent glow — red bloom beneath buttons -->
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 45% 35% at 50% 78%, rgba(200,53,58,0.14) 0%, transparent 55%);"></div>
+    <!-- Edge vignette -->
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 120% 110% at 50% 50%, transparent 35%, rgba(0,0,0,0.38) 100%); pointer-events:none;"></div>
+
+    <div class="relative z-10 max-w-3xl mx-auto px-5 text-center fade-up">
+      <div class="flex justify-center mb-3">
+        <div class="section-title-accent"></div>
+      </div>
+      <h2 class="font-display text-4xl lg:text-5xl font-800 text-white mb-5" style="letter-spacing:-0.03em; line-height:1.1;">
+        Don't Wait Until<br />It Breaks Down.<br /><span class="text-cobalt">Call Us Today.</span>
+      </h2>
+      <p class="text-slate-light text-lg mb-10 max-w-xl mx-auto" style="line-height:1.7;">
+        Same-day service. Honest pricing. Technicians who actually show up. Emrik Refrigeration is ready when you need us most.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="tel:+13618153667" class="btn-primary text-base px-8 py-4">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.54 6.54l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call Now — (361) 815-3667
+        </a>
+        <a href="#contact" class="btn-outline text-base px-8 py-4">
+          Get a Free Quote
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+      <!-- Micro trust row -->
+      <div class="flex flex-wrap items-center justify-center gap-5 mt-10">
+        <span class="flex items-center gap-1.5 text-slate-light text-sm">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          No obligation
+        </span>
+        <span class="text-white/20">·</span>
+        <span class="flex items-center gap-1.5 text-slate-light text-sm">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Upfront pricing
+        </span>
+        <span class="text-white/20">·</span>
+        <span class="flex items-center gap-1.5 text-slate-light text-sm">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Same-day availability
+        </span>
+        <span class="text-white/20">·</span>
+        <span class="flex items-center gap-1.5 text-slate-light text-sm">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Licensed &amp; insured
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="dark-section pt-16 pb-8 border-t" style="border-color: rgba(255,255,255,0.08);" aria-label="Footer">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+
+        <!-- Brand -->
+        <div class="col-span-2 md:col-span-1">
+          <a href="#" class="flex items-center mb-4" aria-label="Emrik Refrigeration">
+            <img src="brand_assets/emrik-logo.png" alt="Emrik Refrigeration and AC" style="height:100px; width:auto; filter: invert(1) brightness(1.1);" />
+          </a>
+          <p class="text-slate-light text-sm mb-5" style="line-height:1.7;">Fast, reliable HVAC and refrigeration service for homes and businesses. Licensed, insured, and committed to doing the job right.</p>
+          <div class="space-y-2">
+            <a href="tel:+13618153667" class="flex items-center gap-2 text-white text-sm font-medium hover:text-cobalt transition-colors duration-150">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.54 6.54l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (361) 815-3667
+            </a>
+            <a href="mailto:emrikrefrigerationandac@gmail.com" class="flex items-center gap-2 text-slate-light text-sm hover:text-white transition-colors duration-150">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              emrikrefrigerationandac@gmail.com
+            </a>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h5 class="font-display font-700 text-white text-sm uppercase tracking-widest mb-4">Services</h5>
+          <ul class="space-y-2.5">
+            <li><a href="#services" class="text-slate-light text-sm hover:text-white transition-colors duration-150">AC Repair &amp; Install</a></li>
+            <li><a href="#services" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Heating Services</a></li>
+            <li><a href="#services" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Preventative Maintenance</a></li>
+            <li><a href="#services" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Refrigeration Repair</a></li>
+            <li><a href="#services" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Commercial Refrigeration</a></li>
+            <li><a href="#services" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Emergency Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h5 class="font-display font-700 text-white text-sm uppercase tracking-widest mb-4">Company</h5>
+          <ul class="space-y-2.5">
+            <li><a href="#why-us" class="text-slate-light text-sm hover:text-white transition-colors duration-150">About Us</a></li>
+            <li><a href="#reviews" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Reviews</a></li>
+            <li><a href="#service-area" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Service Areas</a></li>
+            <li><a href="#contact" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Contact</a></li>
+            <li><a href="#" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Privacy Policy</a></li>
+            <li><a href="#" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Service Area + License -->
+        <div>
+          <h5 class="font-display font-700 text-white text-sm uppercase tracking-widest mb-4">Service Area</h5>
+          <p class="text-slate-light text-sm mb-4" style="line-height:1.7;">Serving Corpus Christi, San Antonio, Victoria and surrounding areas.</p>
+          <div class="rounded-lg p-3" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);">
+            <p class="text-xs text-slate-light" style="line-height:1.6;">
+              <span class="text-white">TDLR License #TACLA144129C • EPA Universal Certified</span><br />
+              Fully Licensed &amp; Insured in Texas
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="divider mb-6"></div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-slate-light text-xs text-center sm:text-left">
+          © 2026 Emrik Refrigeration. All rights reserved.
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="#" class="text-xs text-slate-light hover:text-white transition-colors duration-150">Privacy Policy</a>
+          <span class="text-white/20">·</span>
+          <a href="#" class="text-xs text-slate-light hover:text-white transition-colors duration-150">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       FLOATING CALL BUTTON (mobile only)
+  ============================================================ -->
+  <a href="tel:+13618153667" class="floating-call md:hidden btn-primary shadow-card-lg" aria-label="Call Emrik Refrigeration">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.54 6.54l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call Now
+  </a>
+
+  <!-- ============================================================
+       CHAT WIDGET INSTALL LOCATION
+       Paste your chat widget script tag here (e.g., GHL chat,
+       Tidio, Intercom, Drift, etc.)
+       Example GHL snippet:
+       <script src="https://widgets.leadconnectorhq.com/loader.js"
+               data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+               data-widget-id="YOUR_WIDGET_ID">
+       </script>
+  ============================================================ -->
+  <!-- CHAT WIDGET SCRIPT — PASTE HERE -->
+
+  <script>
+    /* ----------------------------------------------------------------
+       Sticky nav: add scrolled class after 20px
+    ---------------------------------------------------------------- */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 80);
+    }, { passive: true });
+
+    /* ----------------------------------------------------------------
+       Mobile hamburger toggle
+    ---------------------------------------------------------------- */
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open);
+    });
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    });
+
+    /* ----------------------------------------------------------------
+       Scroll-triggered fade-up animation
+    ---------------------------------------------------------------- */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
