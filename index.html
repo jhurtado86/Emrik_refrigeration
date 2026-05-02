@@ -62,7 +62,7 @@
     }
 
     /* ── Dark sections (footer, final CTA) ── */
-    .dark-section { background: #0A1628; }
+    .dark-section { background: #1A2F52; }
     .dark-section .text-white  { color: #fff !important; }
     .dark-section .text-cobalt { color: #3D76C8 !important; }
     /* Legacy dark card classes — no longer used but kept safe */
@@ -90,8 +90,17 @@
         0 24px 56px rgba(26,74,140,0.12),
         0 0 0 1.5px rgba(26,74,140,0.14);
     }
-    .split-card-img { position: relative; height: 220px; overflow: hidden; }
+    .split-card-img { position: relative; height: 260px; overflow: hidden; }
     .split-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    /* Soft fade at bottom of card image into white body */
+    .split-card-img::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 72px;
+      background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.72) 100%);
+      pointer-events: none;
+    }
     .split-card-body { padding: 32px; }
     .split-card-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 22px; color: #0D1F35; margin-bottom: 10px; }
     .split-card-desc { color: #374760; line-height: 1.72; margin-bottom: 22px; font-size: 15px; }
@@ -185,10 +194,10 @@
     /* ── Nav — barely-there at top, frosted glass on scroll ── */
     #navbar {
       position: fixed; top: 0; left: 0; right: 0; z-index: 50;
-      background: rgba(6,10,20,0.18);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.04);
+      background: rgba(14,26,52,0.72);
+      /* No backdrop-filter at base state — filter on child logo causes ghost
+         in Chromium when parent has backdrop-filter. Opacity alone is enough. */
+      border-bottom: 1px solid rgba(255,255,255,0.06);
       transition: background 0.40s cubic-bezier(0.4,0,0.2,1),
                   border-color 0.40s cubic-bezier(0.4,0,0.2,1),
                   box-shadow 0.40s cubic-bezier(0.4,0,0.2,1);
@@ -197,8 +206,7 @@
     #navbar .text-slate-light { color: rgba(255,255,255,0.68) !important; }
     #navbar .hover\:text-white:hover { color: rgba(255,255,255,1) !important; }
     #navbar #hamburger { color: rgba(255,255,255,0.80) !important; border-color: rgba(255,255,255,0.18) !important; }
-    #navbar .nav-logo { filter: invert(1) brightness(1.1); }
-    #mobile-menu { background: rgba(8,13,26,0.92); backdrop-filter: blur(18px); }
+    #mobile-menu { background: rgba(20,36,68,0.95); backdrop-filter: blur(18px); }
     #mobile-menu a.mobile-nav-link { color: rgba(255,255,255,0.68) !important; }
     #mobile-menu a.mobile-nav-link:hover { color: rgba(255,255,255,1) !important; background: rgba(255,255,255,0.06) !important; }
     #mobile-menu { border-top-color: rgba(255,255,255,0.08) !important; }
@@ -214,7 +222,7 @@
     #navbar.scrolled .text-slate-light { color: #5C6B82 !important; }
     #navbar.scrolled .hover\:text-white:hover { color: #0D1F35 !important; }
     #navbar.scrolled #hamburger { color: #0D1F35 !important; border-color: rgba(13,31,53,0.16) !important; }
-    #navbar.scrolled .nav-logo { filter: none; }
+    /* scrolled — logo filter cleared above */
     #navbar.scrolled #mobile-menu { background: #fff; }
     #navbar.scrolled #mobile-menu a.mobile-nav-link { color: #5C6B82 !important; }
     #navbar.scrolled #mobile-menu a.mobile-nav-link:hover { color: #0D1F35 !important; background: rgba(13,31,53,0.04) !important; }
@@ -229,32 +237,48 @@
     }
     .nav-link:hover::after { width: 100%; }
 
-    /* ── Hero (dark, layered) ── */
+    /* ── Hero (video background) ── */
     .hero-bg {
-      background: #0A0F1E; /* L1: deep navy base */
+      background: #0A1220; /* dark fallback while video loads */
     }
-    /* L5: dot grid at reduced intensity — depth texture, not dominant */
-    .hero-dots {
-      background-image: radial-gradient(rgba(59,118,200,0.065) 1px, transparent 1px);
-      background-size: 32px 32px;
-      -webkit-mask-image: radial-gradient(ellipse 85% 80% at 50% 50%, transparent 20%, black 90%);
-      mask-image: radial-gradient(ellipse 85% 80% at 50% 50%, transparent 20%, black 90%);
+    /* Video fills the entire hero, cropped to cover */
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      z-index: 0;
+      will-change: transform;
     }
-    /* L2: cobalt spotlight — illuminates headline from left-center */
-    .hero-layer-spotlight {
-      background: radial-gradient(ellipse 72% 65% at 33% 42%, rgba(27,58,107,0.40) 0%, transparent 65%);
+    /* Primary overlay — darkens video enough for white text to pop */
+    .hero-video-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(180deg, rgba(5,12,28,0.72) 0%, rgba(5,12,28,0.30) 20%, rgba(5,12,28,0.22) 60%, rgba(5,12,28,0.68) 100%),
+        radial-gradient(ellipse 80% 60% at 50% 85%, rgba(180,30,30,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 55% 70% at 0% 50%, rgba(10,40,100,0.28) 0%, transparent 55%);
     }
-    /* L3: warm ember — bottom-right tension (felt, not obvious) */
-    .hero-layer-ember {
-      background: radial-gradient(ellipse 52% 48% at 97% 90%, rgba(139,26,26,0.25) 0%, transparent 58%);
+    /* Mobile: shift video right to show equipment/glow instead of static area */
+    @media (max-width: 767px) {
+      .hero-video { object-position: 58% center; }
+      .hero-text-block h1 { font-size: 2.15rem !important; }
     }
-    /* L4: CTA accent glow — visual magnetism toward button cluster */
-    .hero-layer-cta-glow {
-      background: radial-gradient(ellipse 40% 36% at 22% 78%, rgba(200,53,58,0.15) 0%, transparent 55%);
+
+    /* Mobile: heavier overlay because video crops tighter */
+    @media (max-width: 767px) {
+      .hero-video-overlay {
+        background:
+          linear-gradient(180deg, rgba(5,12,28,0.78) 0%, rgba(5,12,28,0.48) 30%, rgba(5,12,28,0.52) 70%, rgba(5,12,28,0.82) 100%),
+          radial-gradient(ellipse 100% 50% at 50% 90%, rgba(180,30,30,0.20) 0%, transparent 55%);
+      }
     }
     /* Edge vignette — corners darken, center stays bright */
     .hero-vignette {
-      background: radial-gradient(ellipse 125% 110% at 50% 50%, transparent 30%, rgba(0,0,0,0.42) 100%);
+      background: radial-gradient(ellipse 120% 100% at 50% 50%, transparent 35%, rgba(0,0,0,0.50) 100%);
       pointer-events: none;
     }
     /* Trust badges — adapted for dark hero bg */
@@ -272,26 +296,6 @@
       border-color: rgba(59,118,200,0.50);
       background: rgba(26,74,140,0.14);
       transform: translateY(-2px);
-    }
-    /* Geometric accent line — single diagonal, desktop only */
-    .hero-geometric-line {
-      position: absolute;
-      top: 22%;
-      left: -6%;
-      width: 76%;
-      height: 1.5px;
-      background: linear-gradient(90deg, transparent 0%, rgba(27,58,107,0.10) 20%, rgba(27,58,107,0.10) 80%, transparent 100%);
-      transform: rotate(17deg);
-      transform-origin: left center;
-      pointer-events: none;
-    }
-    /* Image border glow — slow opacity pulse only (no transform) */
-    @keyframes hero-img-pulse {
-      0%, 100% { opacity: 0.50; }
-      50%       { opacity: 1; }
-    }
-    .hero-img-glow-ring {
-      animation: hero-img-pulse 3.5s ease-in-out infinite;
     }
 
     /* ── Buttons ── */
@@ -477,9 +481,65 @@
     /* ── Floating call button ── */
     .floating-call { position: fixed; bottom: 24px; right: 20px; z-index: 100; }
 
-    /* ── Logo sizing ── */
-    .nav-logo { height: 52px; width: auto; }
-    @media (min-width: 768px) { .nav-logo { height: 64px; } }
+    /* Logo: PNG has ~25% transparent padding on all sides. Crop into content
+       using background-image so the wordmark fills the container at full size. */
+    .nav-logo-wrap {
+      width: 160px; height: 72px;
+      flex-shrink: 0;
+      background: url('brand_assets/emrik-logo.png') center center / 340px auto no-repeat;
+    }
+    #navbar .nav-logo-wrap { filter: invert(1) contrast(2) brightness(1.05); }
+    #navbar.scrolled .nav-logo-wrap { filter: none; }
+    @media (min-width: 768px) {
+      .nav-logo-wrap { width: 240px; height: 104px; background-size: 510px auto; }
+    }
+
+    /* ── Footer logo — larger crop, inverted for dark background ── */
+    .footer-logo-wrap {
+      width: 200px; height: 90px;
+      background: url('brand_assets/emrik-logo.png') center center / 420px auto no-repeat;
+      filter: invert(1) brightness(1.1);
+      flex-shrink: 0;
+    }
+    @media (min-width: 768px) {
+      .footer-logo-wrap { width: 260px; height: 117px; background-size: 550px auto; }
+    }
+
+    /* ── Card above-title (Built for Homes section) ── */
+    .card-above-title { margin-bottom: 18px; }
+    .card-above-title h3 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 30px;
+      color: #142847;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .card-title-accent {
+      width: 40px; height: 3px; border-radius: 2px;
+    }
+    @media (max-width: 767px) {
+      .card-above-title h3 { font-size: 24px; }
+      .split-card-img { height: 210px; }
+    }
+    @media (min-width: 768px) {
+      .card-above-title { min-height: 92px; }
+      .cards-grid-col { display: flex; flex-direction: column; }
+      .cards-grid-col .split-card { flex: 1; }
+    }
+
+    /* ── Hero layout — left-aligned on desktop so video focal area is visible ── */
+    @media (min-width: 1024px) {
+      .hero-outer {
+        max-width: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: clamp(48px, 5vw, 96px) !important;
+        padding-right: 0 !important;
+      }
+      .hero-text-block { max-width: 560px !important; }
+    }
 
     /* ── Scrollbar ── */
     ::-webkit-scrollbar { width: 6px; }
@@ -496,8 +556,8 @@
   <nav id="navbar" class="py-2">
     <div class="max-w-6xl mx-auto px-5 flex items-center justify-between">
       <!-- Logo -->
-      <a href="#" class="flex items-center gap-3 group" aria-label="Emrik Refrigeration home">
-        <img src="brand_assets/emrik-logo.png" alt="Emrik Refrigeration and AC" class="nav-logo" />
+      <a href="#" class="flex items-center group" aria-label="Emrik Refrigeration home">
+        <div class="nav-logo-wrap" role="img" aria-label="Emrik Refrigeration and AC"></div>
       </a>
 
       <!-- Desktop Nav -->
@@ -540,122 +600,84 @@
   <!-- ============================================================
        SECTION 1: HERO
   ============================================================ -->
-  <section class="hero-bg relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden" aria-label="Hero">
-    <!-- ── Background layer system ── -->
-    <div class="absolute inset-0 z-0">
-      <!-- L2: Cobalt spotlight — illuminates headline area -->
-      <div class="hero-layer-spotlight absolute inset-0"></div>
-      <!-- L3: Warm ember — bottom-right, clipped by section overflow-hidden -->
-      <div class="hero-layer-ember absolute inset-0"></div>
-      <!-- L4: CTA accent glow — draws eye toward button cluster -->
-      <div class="hero-layer-cta-glow absolute inset-0"></div>
-      <!-- L5: Dot grid texture (reduced intensity) -->
-      <div class="hero-dots absolute inset-0"></div>
-    </div>
-    <!-- Vignette overlay — corners dark, center clear -->
-    <div class="hero-vignette absolute inset-0 z-[1]"></div>
-    <!-- Geometric accent — single diagonal line, desktop only -->
-    <div class="hero-geometric-line hidden md:block" style="z-index: 2;"></div>
+  <section class="hero-bg relative min-h-screen flex items-center overflow-hidden" style="padding-top: clamp(88px, 14vw, 128px); padding-bottom: clamp(56px, 8vw, 96px);" aria-label="Hero">
+    <!-- ── Video background ── -->
+    <video
+      class="hero-video"
+      src="brand_assets/Hero-background.mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      aria-hidden="true"
+    ></video>
 
-    <div class="relative z-10 max-w-6xl mx-auto px-5 w-full">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <!-- Left: Copy -->
-        <div class="fade-up">
-          <!-- Trust badges -->
-          <div class="flex flex-wrap gap-2 mb-8">
-            <span class="trust-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Licensed & Insured
-            </span>
-            <span class="trust-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              Same-Day Service
-            </span>
-            <span class="trust-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-              Residential & Commercial
-            </span>
-          </div>
+    <!-- Overlay system over video -->
+    <div class="hero-video-overlay"></div>
+    <!-- Edge vignette — corners dark, center clear -->
+    <div class="hero-vignette absolute inset-0 z-[2]"></div>
 
-          <h1 class="font-display text-5xl lg:text-6xl font-800 leading-none tracking-tight text-white mb-6" style="letter-spacing: -0.03em; line-height: 1.05;">
-            Fast, Reliable<br />
-            <span class="text-cobalt">HVAC & Refrigeration</span><br />
-            Service You Can<br />Trust
-          </h1>
-
-          <p class="text-slate-light text-lg mb-8 max-w-lg" style="line-height: 1.7;">
-            Emrik Refrigeration delivers expert AC, heating, and commercial refrigeration service — when you need it most. Honest pricing, experienced technicians, no runaround.
-          </p>
-
-          <!-- CTAs -->
-          <div class="flex flex-wrap gap-4 mb-10">
-            <a href="tel:+13618153667" class="btn-primary text-base px-7 py-4">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.54 6.54l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              Call Now — (361) 815-3667
-            </a>
-            <a href="#contact" class="btn-outline text-base px-7 py-4">
-              Get a Free Estimate
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
-            </a>
-          </div>
-
-          <!-- Stats row -->
-          <div class="flex flex-wrap gap-8">
-            <div>
-              <div class="font-display font-700 text-2xl text-white">24/7</div>
-              <div class="text-slate-light text-sm mt-0.5">Emergency Service</div>
-            </div>
-            <div class="w-px" style="background:rgba(255,255,255,0.12);"></div>
-            <div>
-              <div class="font-display font-700 text-2xl text-white">Licensed</div>
-              <div class="text-slate-light text-sm mt-0.5">&amp; Insured</div>
-            </div>
-            <div class="w-px" style="background:rgba(255,255,255,0.12);"></div>
-            <div>
-              <div class="font-display font-700 text-2xl text-white">Free</div>
-              <div class="text-slate-light text-sm mt-0.5">Estimates</div>
-            </div>
-          </div>
+    <div class="hero-outer relative z-10 max-w-5xl mx-auto px-5 w-full">
+      <div class="hero-text-block max-w-2xl fade-up">
+        <!-- Trust badges -->
+        <div class="flex flex-wrap gap-2 mb-7">
+          <span class="trust-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Licensed & Insured
+          </span>
+          <span class="trust-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Same-Day Service
+          </span>
+          <span class="trust-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Residential & Commercial
+          </span>
         </div>
 
-        <!-- Right: Hero image card -->
-        <div class="fade-up relative hidden lg:block" style="transition-delay: 0.1s;">
-          <!-- Animated cobalt glow halo — pulses on opacity only -->
-          <div class="hero-img-glow-ring absolute rounded-2xl pointer-events-none" style="inset: -3px; box-shadow: 0 0 40px rgba(27,58,107,0.50), 0 0 80px rgba(27,58,107,0.18); z-index: 0;"></div>
-          <div class="relative rounded-2xl overflow-hidden" style="z-index: 1; border: 1px solid rgba(59,118,200,0.30); box-shadow: 0 20px 52px rgba(0,0,0,0.60), 0 4px 16px rgba(0,0,0,0.40);">
-            <img
-              src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=580&h=460&q=80"
-              alt="Professional HVAC technician at work"
-              class="w-full object-cover block"
-              style="height: 460px;"
-            />
-            <!-- Dark vignette gradient -->
-            <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(10,16,30,0.08) 0%, rgba(10,16,30,0.62) 100%);"></div>
-            <!-- Blue tint overlay — stronger than before -->
-            <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(27,58,107,0.38) 0%, transparent 52%);"></div>
-            <!-- Red accent bar at bottom of image -->
-            <div class="absolute bottom-0 left-0 right-0" style="height: 3px; background: linear-gradient(90deg, #C8353A 0%, rgba(200,53,58,0.2) 100%);"></div>
+        <h1 class="font-display text-white mb-5" style="font-size: clamp(2.4rem, 6vw, 3.8rem); letter-spacing: -0.03em; line-height: 1.06; font-weight: 800; text-shadow: 0 2px 24px rgba(0,0,0,0.45);">
+          Fast, Reliable<br />
+          <span style="color: #6CA3E8;">HVAC & Refrigeration</span><br />
+          Service You Can Trust
+        </h1>
 
-            <!-- Floating badge on image -->
-            <div class="absolute bottom-6 left-6 right-6">
-              <div class="rounded-xl p-4" style="background: rgba(10,22,40,0.88); backdrop-filter: blur(12px); border: 1px solid rgba(26,74,140,0.2);">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-full bg-cobalt/20 border border-cobalt/30 flex items-center justify-center flex-shrink-0">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                  </div>
-                  <div>
-                    <div class="text-white font-semibold text-sm">24/7 Emergency Service</div>
-                    <div class="text-slate-light text-xs mt-0.5">We answer every call, day or night</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <p class="mb-8 max-w-xl" style="color: rgba(255,255,255,0.88); font-size: clamp(1rem, 2.2vw, 1.125rem); line-height: 1.72; text-shadow: 0 1px 8px rgba(0,0,0,0.35);">
+          Emrik Refrigeration delivers expert AC, heating, and commercial refrigeration service — when you need it most. Honest pricing, experienced technicians, no runaround.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-4 mb-10">
+          <a href="tel:+13618153667" class="btn-primary text-base px-7 py-4">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.54 6.54l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now — (361) 815-3667
+          </a>
+          <a href="#contact" class="btn-outline text-base px-7 py-4">
+            Get a Free Estimate
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+
+        <!-- Stats row -->
+        <div class="flex flex-wrap gap-8">
+          <div>
+            <div class="font-display font-700 text-2xl text-white" style="text-shadow: 0 1px 8px rgba(0,0,0,0.4);">24/7</div>
+            <div class="text-slate-light text-sm mt-0.5">Emergency Service</div>
           </div>
-
+          <div class="w-px" style="background:rgba(255,255,255,0.14);"></div>
+          <div>
+            <div class="font-display font-700 text-2xl text-white" style="text-shadow: 0 1px 8px rgba(0,0,0,0.4);">Licensed</div>
+            <div class="text-slate-light text-sm mt-0.5">&amp; Insured</div>
+          </div>
+          <div class="w-px" style="background:rgba(255,255,255,0.14);"></div>
+          <div>
+            <div class="font-display font-700 text-2xl text-white" style="text-shadow: 0 1px 8px rgba(0,0,0,0.4);">Free</div>
+            <div class="text-slate-light text-sm mt-0.5">Estimates</div>
+          </div>
         </div>
       </div>
     </div>
-    <!-- Red accent bridge — guides eye from dark hero into light trust bar -->
+    <!-- Red accent bridge -->
     <div class="absolute bottom-0 left-0 right-0 z-20" style="height:4px; background: linear-gradient(90deg, transparent 0%, #C8353A 18%, #C8353A 82%, transparent 100%); opacity:0.90;"></div>
   </section>
 
@@ -1102,7 +1124,7 @@
   ============================================================ -->
   <section class="section-mid py-20" aria-label="Residential and commercial services">
     <div class="max-w-6xl mx-auto px-5">
-      <div class="text-center mb-12 fade-up">
+      <div class="text-center mb-8 fade-up">
         <div class="flex justify-center mb-3">
           <div class="section-title-accent"></div>
         </div>
@@ -1115,65 +1137,71 @@
       </div>
 
       <div class="grid md:grid-cols-2 gap-6">
-        <!-- Residential — light card, cobalt accent -->
-        <div class="split-card fade-up">
-          <div class="split-card-img">
-            <img src="https://placehold.co/620x220/C8D8EE/1A4A8C?text=Residential+HVAC" alt="Residential HVAC service" />
-            <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(10,22,40,0.04) 0%, rgba(10,22,40,0.52) 100%);"></div>
-            <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(26,74,140,0.18) 0%, transparent 55%);"></div>
-            <div class="absolute bottom-5 left-6">
-              <span class="badge-cobalt">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-                Residential
-              </span>
-            </div>
+
+        <!-- Residential column -->
+        <div class="cards-grid-col fade-up">
+          <div class="card-above-title">
+            <h3>Residential HVAC</h3>
+            <div class="card-title-accent" style="background: linear-gradient(90deg, #1A4A8C, #3D76C8);"></div>
           </div>
-          <!-- Cobalt accent top strip -->
-          <div style="height:3px; background: linear-gradient(90deg, #1A4A8C 0%, rgba(26,74,140,0.12) 100%);"></div>
-          <div class="split-card-body">
-            <h3 class="split-card-title">For Homeowners</h3>
-            <p class="split-card-desc">Keep your family comfortable year-round. We handle everything from annual tune-ups to full system replacements — with the same care we'd give our own home.</p>
-            <ul class="split-card-list">
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5" flex-shrink="0"><polyline points="20 6 9 17 4 12"/></svg> Central AC &amp; Heat Repair</li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5" flex-shrink="0"><polyline points="20 6 9 17 4 12"/></svg> New System Installation</li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5" flex-shrink="0"><polyline points="20 6 9 17 4 12"/></svg> Annual Maintenance Plans</li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5" flex-shrink="0"><polyline points="20 6 9 17 4 12"/></svg> Indoor Air Quality Solutions</li>
-            </ul>
-            <a href="#contact" class="btn-primary text-sm py-3 px-6">Get a Home Estimate
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-            </a>
+          <div class="split-card">
+            <div class="split-card-img">
+              <img
+                src="brand_assets/residential-card-bg.jpg"
+                alt="Residential air conditioning condenser unit at a modern home"
+                style="object-position: center;"
+              />
+            </div>
+            <!-- Cobalt accent strip -->
+            <div style="height:3px; background: linear-gradient(90deg, #1A4A8C 0%, rgba(26,74,140,0.12) 100%);"></div>
+            <div class="split-card-body">
+              <h3 class="split-card-title">For Homeowners</h3>
+              <p class="split-card-desc">Keep your family comfortable year-round. We handle everything from annual tune-ups to full system replacements — with the same care we'd give our own home.</p>
+              <ul class="split-card-list">
+                <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5" flex-shrink="0"><polyline points="20 6 9 17 4 12"/></svg> Central AC &amp; Heat Repair</li>
+                <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5" flex-shrink="0"><polyline points="20 6 9 17 4 12"/></svg> New System Installation</li>
+                <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5" flex-shrink="0"><polyline points="20 6 9 17 4 12"/></svg> Annual Maintenance Plans</li>
+                <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5" flex-shrink="0"><polyline points="20 6 9 17 4 12"/></svg> Indoor Air Quality Solutions</li>
+              </ul>
+              <a href="#contact" class="btn-primary text-sm py-3 px-6">Get a Home Estimate
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- Commercial — light card, scarlet accent -->
-        <div class="split-card fade-up" style="transition-delay:0.1s;">
-          <div class="split-card-img">
-            <img src="https://placehold.co/620x220/BDD0E8/1A4A8C?text=Commercial+Refrigeration" alt="Commercial refrigeration service" />
-            <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(10,22,40,0.04) 0%, rgba(10,22,40,0.52) 100%);"></div>
-            <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(200,53,58,0.12) 0%, transparent 55%);"></div>
-            <div class="absolute bottom-5 left-6">
-              <span class="badge-scarlet">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                Commercial
-              </span>
+        <!-- Commercial column -->
+        <div class="cards-grid-col fade-up" style="transition-delay:0.1s;">
+          <div class="card-above-title">
+            <h3>Commercial HVAC &amp; Refrigeration</h3>
+            <div class="card-title-accent" style="background: linear-gradient(90deg, #C8353A, rgba(200,53,58,0.40));"></div>
+          </div>
+          <div class="split-card">
+            <div class="split-card-img">
+              <img
+                src="brand_assets/commericial-card-bg.jpg"
+                alt="Commercial rooftop HVAC system at twilight"
+                style="object-position: center;"
+              />
+            </div>
+            <!-- Scarlet accent strip -->
+            <div style="height:3px; background: linear-gradient(90deg, #C8353A 0%, rgba(200,53,58,0.12) 100%);"></div>
+            <div class="split-card-body">
+              <h3 class="split-card-title">For Businesses</h3>
+              <p class="split-card-desc">Downtime means lost revenue. We prioritize commercial calls and offer service contracts that keep your systems running so you can focus on business.</p>
+              <ul class="split-card-list">
+                <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5" flex-shrink="0"><polyline points="20 6 9 17 4 12"/></svg> Commercial HVAC Systems</li>
+                <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5" flex-shrink="0"><polyline points="20 6 9 17 4 12"/></svg> Walk-In Cooler &amp; Freezer Service</li>
+                <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5" flex-shrink="0"><polyline points="20 6 9 17 4 12"/></svg> Preventative Maintenance Contracts</li>
+                <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5" flex-shrink="0"><polyline points="20 6 9 17 4 12"/></svg> Priority Emergency Response</li>
+              </ul>
+              <a href="#contact" class="btn-primary text-sm py-3 px-6">Get a Commercial Quote
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
             </div>
           </div>
-          <!-- Scarlet accent top strip -->
-          <div style="height:3px; background: linear-gradient(90deg, #C8353A 0%, rgba(200,53,58,0.12) 100%);"></div>
-          <div class="split-card-body">
-            <h3 class="split-card-title">For Businesses</h3>
-            <p class="split-card-desc">Downtime means lost revenue. We prioritize commercial calls and offer service contracts that keep your systems running so you can focus on business.</p>
-            <ul class="split-card-list">
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5" flex-shrink="0"><polyline points="20 6 9 17 4 12"/></svg> Commercial HVAC Systems</li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5" flex-shrink="0"><polyline points="20 6 9 17 4 12"/></svg> Walk-In Cooler &amp; Freezer Service</li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5" flex-shrink="0"><polyline points="20 6 9 17 4 12"/></svg> Preventative Maintenance Contracts</li>
-              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.5" flex-shrink="0"><polyline points="20 6 9 17 4 12"/></svg> Priority Emergency Response</li>
-            </ul>
-            <a href="#contact" class="btn-primary text-sm py-3 px-6">Get a Commercial Quote
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-            </a>
-          </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -1251,7 +1279,7 @@
         <!-- Brand -->
         <div class="col-span-2 md:col-span-1">
           <a href="#" class="flex items-center mb-4" aria-label="Emrik Refrigeration">
-            <img src="brand_assets/emrik-logo.png" alt="Emrik Refrigeration and AC" style="height:100px; width:auto; filter: invert(1) brightness(1.1);" />
+            <div class="footer-logo-wrap" role="img" aria-label="Emrik Refrigeration and AC"></div>
           </a>
           <p class="text-slate-light text-sm mb-5" style="line-height:1.7;">Fast, reliable HVAC and refrigeration service for homes and businesses. Licensed, insured, and committed to doing the job right.</p>
           <div class="space-y-2">
