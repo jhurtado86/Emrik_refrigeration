@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You — Emrik Refrigeration &amp; AC</title>
+  <meta name="description" content="Your request has been received. Emrik Refrigeration &amp; AC will be in touch shortly." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy:    { DEFAULT: '#0A1628', 800: '#0D1E36', 700: '#122540', 600: '#172D4D' },
+            charcoal:{ DEFAULT: '#1E2A3A', 700: '#253040', 600: '#2C3A4D' },
+            cobalt:  { DEFAULT: '#1A4A8C', 400: '#2B5FAA', 300: '#3D76C8', 200: '#C8D8F0' },
+            scarlet: { DEFAULT: '#C8353A', 400: '#D45C60', 300: '#DC8385' },
+            slate:   { light: '#5C6B82', muted: '#8A96A8' },
+            ink:     { DEFAULT: '#0D1F35' },
+          },
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            body:    ['Inter', 'sans-serif'],
+          },
+          boxShadow: {
+            'card':    '0 2px 8px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)',
+            'card-lg': '0 8px 32px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.05)',
+            'glow':    '0 0 28px rgba(26,74,140,0.14)',
+            'cta':     '0 4px 20px rgba(200,53,58,0.30)',
+          },
+          letterSpacing: { tight: '-0.03em' },
+          lineHeight:    { body: '1.7' },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #fff; color: #0D1F35; }
+    h1,h2,h3,h4 { font-family: 'Syne', sans-serif; }
+
+    /* ── Section backgrounds ── */
+    .section-dark { background: #FFFFFF; }
+    .section-mid {
+      background:
+        radial-gradient(ellipse 100% 60% at 50% 0%, rgba(26,74,140,0.038) 0%, transparent 55%),
+        #EBF0F9;
+    }
+    .dark-section { background: #1A2F52; }
+    .dark-section .text-white  { color: #fff !important; }
+    .dark-section .text-cobalt { color: #3D76C8 !important; }
+    .dark-section .text-slate-light { color: #8FA3BE !important; }
+    .dark-section .btn-outline { color: #fff; border-color: rgba(255,255,255,0.28); }
+    .dark-section .btn-outline:hover { border-color: rgba(255,255,255,0.60); background: rgba(255,255,255,0.06); }
+    .dark-section .divider { background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent); }
+    .dark-section .section-title-accent { background: linear-gradient(90deg, transparent 0%, #C8353A 25%, #C8353A 75%, transparent 100%); }
+    .section-dark .text-white,
+    .section-mid  .text-white { color: #0D1F35; }
+    .section-dark .text-slate-light,
+    .section-mid  .text-slate-light { color: #4B5A6E; }
+
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(26,74,140,0.12) 30%, rgba(26,74,140,0.12) 70%, transparent 100%);
+    }
+
+    /* ── Nav ── */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      background: rgba(14,26,52,0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: background 0.40s cubic-bezier(0.4,0,0.2,1),
+                  border-color 0.40s cubic-bezier(0.4,0,0.2,1),
+                  box-shadow 0.40s cubic-bezier(0.4,0,0.2,1);
+    }
+    #navbar .text-slate-light { color: rgba(255,255,255,0.68) !important; }
+    #navbar .hover\:text-white:hover { color: rgba(255,255,255,1) !important; }
+    #navbar #hamburger { color: rgba(255,255,255,0.80) !important; border-color: rgba(255,255,255,0.18) !important; }
+    #mobile-menu { background: rgba(20,36,68,0.95); backdrop-filter: blur(18px); }
+    #mobile-menu a.mobile-nav-link { color: rgba(255,255,255,0.68) !important; }
+    #mobile-menu a.mobile-nav-link:hover { color: rgba(255,255,255,1) !important; background: rgba(255,255,255,0.06) !important; }
+    #mobile-menu { border-top-color: rgba(255,255,255,0.08) !important; }
+    #navbar.scrolled {
+      background: rgba(255,255,255,0.72);
+      backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px);
+      border-bottom-color: rgba(13,31,53,0.07);
+      box-shadow: 0 1px 24px rgba(0,0,0,0.06);
+    }
+    #navbar.scrolled .text-slate-light { color: #5C6B82 !important; }
+    #navbar.scrolled .hover\:text-white:hover { color: #0D1F35 !important; }
+    #navbar.scrolled #hamburger { color: #0D1F35 !important; border-color: rgba(13,31,53,0.16) !important; }
+    #navbar.scrolled #mobile-menu { background: #fff; }
+    #navbar.scrolled #mobile-menu a.mobile-nav-link { color: #5C6B82 !important; }
+    #navbar.scrolled #mobile-menu a.mobile-nav-link:hover { color: #0D1F35 !important; background: rgba(13,31,53,0.04) !important; }
+    #navbar.scrolled #mobile-menu { border-top-color: rgba(13,31,53,0.08) !important; }
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 2px; background: #1A4A8C;
+      transition: width 0.25s cubic-bezier(0.4,0,0.2,1);
+    }
+    .nav-link:hover::after { width: 100%; }
+
+    /* ── Hero — dark, layered (no video, solid gradient) ── */
+    .thankyou-hero {
+      background:
+        radial-gradient(ellipse 80% 70% at 30% 40%, rgba(27,58,107,0.55) 0%, transparent 65%),
+        radial-gradient(ellipse 60% 50% at 80% 80%, rgba(139,26,26,0.22) 0%, transparent 55%),
+        radial-gradient(ellipse 100% 80% at 50% 100%, rgba(10,18,40,0.60) 0%, transparent 60%),
+        #0A1220;
+    }
+    /* Subtle dot grid texture */
+    .thankyou-hero-dots {
+      background-image: radial-gradient(rgba(59,118,200,0.055) 1px, transparent 1px);
+      background-size: 28px 28px;
+      -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 30%, transparent 100%);
+      mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 30%, transparent 100%);
+    }
+    /* Edge vignette */
+    .thankyou-vignette {
+      background: radial-gradient(ellipse 130% 120% at 50% 50%, transparent 30%, rgba(0,0,0,0.48) 100%);
+      pointer-events: none;
+    }
+
+    /* Checkmark ring animation */
+    @keyframes check-pop {
+      0%   { transform: scale(0.5); opacity: 0; }
+      60%  { transform: scale(1.12); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    @keyframes check-draw {
+      0%   { stroke-dashoffset: 60; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes ring-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(26,74,140,0.40); }
+      50%       { box-shadow: 0 0 0 16px rgba(26,74,140,0); }
+    }
+    .check-icon-wrap {
+      animation: check-pop 0.60s cubic-bezier(0.34,1.56,0.64,1) both;
+      animation-delay: 0.15s;
+    }
+    .check-icon-wrap.pulse {
+      animation: check-pop 0.60s cubic-bezier(0.34,1.56,0.64,1) both 0.15s,
+                 ring-pulse 2.8s ease-in-out infinite 0.75s;
+    }
+    .check-path {
+      stroke-dasharray: 60;
+      stroke-dashoffset: 60;
+      animation: check-draw 0.45s cubic-bezier(0.4,0,0.2,1) forwards;
+      animation-delay: 0.55s;
+    }
+
+    /* ── Step cards ── */
+    .step-card {
+      background: #fff;
+      border: 1px solid rgba(26,74,140,0.09);
+      border-radius: 18px;
+      padding: 28px 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 6px 24px rgba(26,74,140,0.07);
+      transition: transform 0.24s cubic-bezier(0.34,1.56,0.64,1),
+                  box-shadow 0.24s cubic-bezier(0.4,0,0.2,1);
+      position: relative;
+    }
+    .step-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 18px 40px rgba(26,74,140,0.12);
+    }
+    .step-number {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 44px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      background: linear-gradient(135deg, rgba(26,74,140,0.18) 0%, rgba(26,74,140,0.06) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      user-select: none;
+      position: absolute;
+      top: 20px; right: 22px;
+    }
+
+    /* ── Trust signal row ── */
+    .trust-signal {
+      display: flex; align-items: center; gap: 14px;
+    }
+    .trust-signal-icon {
+      width: 48px; height: 48px; border-radius: 14px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, rgba(26,74,140,0.12) 0%, rgba(26,74,140,0.06) 100%);
+      border: 1px solid rgba(26,74,140,0.16);
+      box-shadow: 0 2px 8px rgba(26,74,140,0.10), inset 0 1px 0 rgba(255,255,255,0.55);
+    }
+
+    /* ── Review card ── */
+    .review-card {
+      background: #fff;
+      border: 1px solid rgba(13,31,53,0.07);
+      border-radius: 18px;
+      padding: 36px 32px;
+      position: relative; overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 28px rgba(0,0,0,0.07);
+    }
+    .review-card::before {
+      content: '\201C';
+      position: absolute; top: 12px; right: 22px;
+      font-size: 80px; line-height: 1;
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      color: rgba(26,74,140,0.055);
+      pointer-events: none; user-select: none;
+    }
+
+    /* ── Buttons ── */
+    .btn-primary {
+      background: #C8353A; color: #fff; font-weight: 700;
+      border-radius: 8px; padding: 14px 28px; font-size: 15px;
+      letter-spacing: 0.01em;
+      box-shadow: 0 4px 18px rgba(200,53,58,0.30);
+      transition: transform 0.18s cubic-bezier(0.4,0,0.2,1),
+                  box-shadow 0.18s cubic-bezier(0.4,0,0.2,1),
+                  background 0.18s cubic-bezier(0.4,0,0.2,1);
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover  { background: #D64045; transform: translateY(-2px); box-shadow: 0 8px 26px rgba(200,53,58,0.38); }
+    .btn-primary:active { transform: translateY(0); box-shadow: 0 2px 10px rgba(200,53,58,0.22); }
+    .btn-primary:focus-visible { outline: 2px solid #C8353A; outline-offset: 3px; }
+    .btn-outline {
+      background: transparent; color: #0D1F35; font-weight: 600;
+      border: 1.5px solid rgba(13,31,53,0.22); border-radius: 8px;
+      padding: 13px 28px; font-size: 15px;
+      transition: transform 0.18s cubic-bezier(0.4,0,0.2,1),
+                  border-color 0.18s cubic-bezier(0.4,0,0.2,1),
+                  background 0.18s cubic-bezier(0.4,0,0.2,1);
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-outline:hover  { border-color: #1A4A8C; background: rgba(26,74,140,0.05); transform: translateY(-2px); }
+    .btn-outline:active { transform: translateY(0); }
+    .btn-outline:focus-visible { outline: 2px solid #1A4A8C; outline-offset: 3px; }
+    /* Hero dark treatment for outline */
+    .thankyou-hero .btn-outline {
+      color: rgba(255,255,255,0.88);
+      border-color: rgba(255,255,255,0.22);
+    }
+    .thankyou-hero .btn-outline:hover {
+      border-color: rgba(59,118,200,0.55);
+      background: rgba(26,74,140,0.18);
+    }
+
+    /* ── Badges ── */
+    .trust-badge {
+      background: rgba(26,74,140,0.07);
+      border: 1px solid rgba(26,74,140,0.15);
+      border-radius: 100px; padding: 6px 14px;
+      font-size: 13px; font-weight: 500; color: #1A4A8C;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .hero-trust-badge {
+      background: rgba(59,118,200,0.12);
+      border: 1px solid rgba(59,118,200,0.25);
+      color: #C8D8F0;
+      border-radius: 100px; padding: 6px 14px;
+      font-size: 13px; font-weight: 500;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .section-title-accent {
+      display: inline-block; width: 64px; height: 3px;
+      background: linear-gradient(90deg, transparent 0%, #C8353A 25%, #C8353A 75%, transparent 100%);
+      border-radius: 2px; margin-bottom: 12px;
+    }
+
+    /* ── Phone pulse ── */
+    .phone-pulse { animation: pulse-ring 2.5s cubic-bezier(0.4,0,0.6,1) infinite; }
+    @keyframes pulse-ring {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(200,53,58,0.4); }
+      50%       { box-shadow: 0 0 0 10px rgba(200,53,58,0); }
+    }
+
+    /* ── Scroll fade-up ── */
+    .fade-up {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.55s cubic-bezier(0.4,0,0.2,1),
+                  transform 0.55s cubic-bezier(0.4,0,0.2,1);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Stars ── */
+    .stars { color: #F59E0B; letter-spacing: 1px; }
+
+    /* ── Logo ── */
+    .nav-logo-wrap {
+      width: 160px; height: 72px; flex-shrink: 0;
+      background: url('brand_assets/emrik-logo.png') center center / 340px auto no-repeat;
+    }
+    #navbar .nav-logo-wrap { filter: invert(1) contrast(2) brightness(1.05); }
+    #navbar.scrolled .nav-logo-wrap { filter: none; }
+    @media (min-width: 768px) {
+      .nav-logo-wrap { width: 240px; height: 104px; background-size: 510px auto; }
+    }
+    .footer-logo-wrap {
+      width: 200px; height: 90px;
+      background: url('brand_assets/emrik-logo.png') center center / 420px auto no-repeat;
+      filter: invert(1) brightness(1.1); flex-shrink: 0;
+    }
+    @media (min-width: 768px) {
+      .footer-logo-wrap { width: 260px; height: 117px; background-size: 550px auto; }
+    }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #F4F7FA; }
+    ::-webkit-scrollbar-thumb { background: #D0D8E4; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #1A4A8C; }
+  </style>
+</head>
+<body class="font-body leading-body">
+
+  <!-- ============================================================
+       STICKY NAVIGATION (exact copy from index.html)
+  ============================================================ -->
+  <nav id="navbar" class="py-2">
+    <div class="max-w-6xl mx-auto px-5 flex items-center justify-between">
+      <a href="index.html" class="flex items-center group" aria-label="Emrik Refrigeration home">
+        <div class="nav-logo-wrap" role="img" aria-label="Emrik Refrigeration and AC"></div>
+      </a>
+      <div class="hidden md:flex items-center gap-7">
+        <a href="index.html#services" class="nav-link text-sm font-medium text-slate-light hover:text-white transition-colors duration-150">Services</a>
+        <a href="index.html#why-us" class="nav-link text-sm font-medium text-slate-light hover:text-white transition-colors duration-150">Why Us</a>
+        <a href="index.html#reviews" class="nav-link text-sm font-medium text-slate-light hover:text-white transition-colors duration-150">Reviews</a>
+        <a href="index.html#contact" class="nav-link text-sm font-medium text-slate-light hover:text-white transition-colors duration-150">Contact</a>
+        <a href="tel:+13613602763" class="btn-primary text-sm py-2.5 px-5 phone-pulse ml-4">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.54 6.54l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (361) 360-3276
+        </a>
+      </div>
+      <button id="hamburger" class="md:hidden p-2 rounded-lg border border-white/10 text-white hover:border-cobalt/40 transition-colors duration-150 focus-visible:outline-cobalt" aria-label="Open menu">
+        <svg id="hamburger-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden px-5 pb-4 mt-3 border-t border-white/10">
+      <div class="flex flex-col gap-1 pt-4">
+        <a href="index.html#services" class="mobile-nav-link py-3 px-3 rounded-lg text-slate-light hover:text-white hover:bg-white/5 transition-colors duration-150 font-medium">Services</a>
+        <a href="index.html#why-us" class="mobile-nav-link py-3 px-3 rounded-lg text-slate-light hover:text-white hover:bg-white/5 transition-colors duration-150 font-medium">Why Us</a>
+        <a href="index.html#reviews" class="mobile-nav-link py-3 px-3 rounded-lg text-slate-light hover:text-white hover:bg-white/5 transition-colors duration-150 font-medium">Reviews</a>
+        <a href="index.html#contact" class="mobile-nav-link py-3 px-3 rounded-lg text-slate-light hover:text-white hover:bg-white/5 transition-colors duration-150 font-medium">Contact</a>
+        <a href="tel:+13613602763" class="btn-primary mt-3 justify-center">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.54 6.54l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call (361) 360-3276
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO — Thank You confirmation
+  ============================================================ -->
+  <section class="thankyou-hero relative overflow-hidden flex items-center" style="min-height: 100svh; padding-top: clamp(96px, 15vw, 140px); padding-bottom: clamp(64px, 9vw, 108px);" aria-label="Thank you confirmation">
+    <!-- Dot texture -->
+    <div class="thankyou-hero-dots absolute inset-0 z-0"></div>
+    <!-- Vignette -->
+    <div class="thankyou-vignette absolute inset-0 z-[1]"></div>
+    <!-- Red accent at bottom -->
+    <div class="absolute bottom-0 left-0 right-0 z-20" style="height:4px; background: linear-gradient(90deg, transparent 0%, #C8353A 18%, #C8353A 82%, transparent 100%); opacity:0.88;"></div>
+
+    <div class="relative z-10 max-w-3xl mx-auto px-5 w-full text-center">
+
+      <!-- Animated checkmark -->
+      <div class="flex justify-center mb-8">
+        <div class="check-icon-wrap pulse w-24 h-24 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, rgba(26,74,140,0.28) 0%, rgba(26,74,140,0.14) 100%); border: 2px solid rgba(61,118,200,0.40); box-shadow: 0 0 0 8px rgba(26,74,140,0.10), 0 8px 32px rgba(26,74,140,0.28);">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path class="check-path" d="M10 22 L19 31 L34 14" stroke="#6CA3E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="font-display font-800 text-white mb-4" style="font-size: clamp(2.4rem, 6vw, 3.6rem); letter-spacing: -0.03em; line-height: 1.08; text-shadow: 0 2px 24px rgba(0,0,0,0.40);">
+        We Got Your Request!
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="font-display font-600 mb-5" style="font-size: clamp(1.1rem, 2.5vw, 1.35rem); color: #6CA3E8; letter-spacing: -0.01em; line-height: 1.4;">
+        Someone from Emrik Refrigeration &amp; AC will be in touch with you shortly.
+      </p>
+
+      <!-- Body copy -->
+      <p class="mb-10 max-w-lg mx-auto" style="color: rgba(255,255,255,0.80); font-size: clamp(0.95rem, 2vw, 1.05rem); line-height: 1.74; text-shadow: 0 1px 8px rgba(0,0,0,0.30);">
+        In the meantime, if you need immediate assistance — especially for emergency AC or refrigeration issues — don't hesitate to call us directly.
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="tel:+13613602763" class="btn-primary text-base px-8 py-4 phone-pulse">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.54 6.54l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call Now — (361) 360-3276
+        </a>
+        <a href="index.html" class="btn-outline text-base px-8 py-4">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+          Back to Home
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TRUST SIGNALS
+  ============================================================ -->
+  <section class="section-dark py-14" aria-label="Trust signals">
+    <div class="max-w-5xl mx-auto px-5">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-up">
+
+        <!-- Licensed -->
+        <div class="trust-signal p-5 rounded-2xl" style="background: linear-gradient(135deg, rgba(26,74,140,0.05) 0%, rgba(26,74,140,0.02) 100%); border: 1px solid rgba(26,74,140,0.10);">
+          <div class="trust-signal-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div class="font-display font-700 text-ink text-base mb-0.5">Licensed &amp; Insured</div>
+            <div class="text-sm" style="color: #4B5A6E; line-height: 1.5;">TDLR License #TACLA144129C</div>
+          </div>
+        </div>
+
+        <!-- 24/7 -->
+        <div class="trust-signal p-5 rounded-2xl" style="background: linear-gradient(135deg, rgba(26,74,140,0.05) 0%, rgba(26,74,140,0.02) 100%); border: 1px solid rgba(26,74,140,0.10);">
+          <div class="trust-signal-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="font-display font-700 text-ink text-base mb-0.5">24/7 Emergency Service</div>
+            <div class="text-sm" style="color: #4B5A6E; line-height: 1.5;">We're always available</div>
+          </div>
+        </div>
+
+        <!-- EPA -->
+        <div class="trust-signal p-5 rounded-2xl" style="background: linear-gradient(135deg, rgba(26,74,140,0.05) 0%, rgba(26,74,140,0.02) 100%); border: 1px solid rgba(26,74,140,0.10);">
+          <div class="trust-signal-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <div class="font-display font-700 text-ink text-base mb-0.5">EPA Universal Certified</div>
+            <div class="text-sm" style="color: #4B5A6E; line-height: 1.5;">Professional grade service</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WHAT HAPPENS NEXT — 3-step process
+  ============================================================ -->
+  <section class="section-mid py-20" aria-label="What happens next">
+    <div class="max-w-5xl mx-auto px-5">
+
+      <div class="text-center mb-12 fade-up">
+        <div class="flex justify-center mb-3">
+          <div class="section-title-accent"></div>
+        </div>
+        <h2 class="font-display font-700 text-white mb-3" style="font-size: clamp(1.9rem, 4vw, 2.8rem); letter-spacing: -0.03em;">
+          What Happens Next
+        </h2>
+        <p class="text-slate-light text-base max-w-md mx-auto" style="line-height: 1.7;">
+          Here's exactly what to expect after you submit.
+        </p>
+      </div>
+
+      <!-- Steps grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 relative">
+
+        <!-- Connector line — desktop only -->
+        <div class="hidden md:block absolute top-12 left-1/4 right-1/4 h-px" style="background: linear-gradient(90deg, transparent 0%, rgba(26,74,140,0.18) 20%, rgba(26,74,140,0.18) 80%, transparent 100%); z-index: 0;"></div>
+
+        <!-- Step 1 -->
+        <div class="step-card fade-up">
+          <div class="step-number">01</div>
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background: linear-gradient(135deg, rgba(26,74,140,0.14) 0%, rgba(26,74,140,0.07) 100%); border: 1px solid rgba(26,74,140,0.18);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3 class="font-display font-700 text-ink mb-2" style="font-size: 18px;">We review your request</h3>
+          <p class="text-sm" style="color: #4B5A6E; line-height: 1.7;">Our team reviews the details you provided so we come prepared with the right parts and expertise.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card fade-up" style="transition-delay: 0.08s;">
+          <div class="step-number">02</div>
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background: linear-gradient(135deg, rgba(200,53,58,0.12) 0%, rgba(200,53,58,0.06) 100%); border: 1px solid rgba(200,53,58,0.18);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C8353A" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.54 6.54l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h3 class="font-display font-700 text-ink mb-2" style="font-size: 18px;">We reach out to schedule</h3>
+          <p class="text-sm" style="color: #4B5A6E; line-height: 1.7;">Expect a call or text from us to confirm a time that works for you — often same or next day.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card fade-up" style="transition-delay: 0.16s;">
+          <div class="step-number">03</div>
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background: linear-gradient(135deg, rgba(26,74,140,0.14) 0%, rgba(26,74,140,0.07) 100%); border: 1px solid rgba(26,74,140,0.18);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3 class="font-display font-700 text-ink mb-2" style="font-size: 18px;">We show up and get it done</h3>
+          <p class="text-sm" style="color: #4B5A6E; line-height: 1.7;">Our technician arrives on time, diagnoses the issue, and gets your system back up — straight answers, no runaround.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       REVIEW TEASER — Stephanie Jernigan
+  ============================================================ -->
+  <section class="section-dark py-16" aria-label="Customer review">
+    <div class="max-w-2xl mx-auto px-5">
+
+      <div class="text-center mb-8 fade-up">
+        <p class="text-sm font-600 uppercase tracking-widest" style="color: #8A96A8; letter-spacing: 0.12em;">Don't just take our word for it</p>
+      </div>
+
+      <!-- Review card — section-dark uses white bg cards -->
+      <div class="fade-up" style="transition-delay: 0.06s;">
+        <div class="review-card">
+          <div class="stars text-base mb-4">★★★★★</div>
+          <p class="text-ink text-base mb-6" style="line-height: 1.74;">
+            "The level of professionalism this company upholds is something I can hardly put into words. In the heat of summer my AC went out — I called Emrik and they were out the same day. They found the exact problem, ordered the part, and Rick was in my home installing it the same day it arrived. Haven't had an issue since. Unbeatable pricing."
+          </p>
+          <div class="flex items-center gap-3 pt-5 border-t" style="border-color: rgba(13,31,53,0.08);">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center font-display font-700 text-sm flex-shrink-0" style="background: linear-gradient(135deg, #1A4A8C, #2B5FAA); color: #fff;">SJ</div>
+            <div>
+              <div class="font-semibold text-ink text-sm">Stephanie Jernigan</div>
+              <div class="text-xs" style="color: #5C6B82;">Google Review</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Link to all reviews -->
+      <div class="text-center mt-6 fade-up" style="transition-delay: 0.12s;">
+        <a href="https://www.google.com/search?q=Emrik+Refrigeration+reviews" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm hover:text-ink transition-colors duration-150" style="color: #5C6B82;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          See all reviews on Google
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER (exact copy from index.html)
+  ============================================================ -->
+  <footer class="dark-section pt-16 pb-8 border-t" style="border-color: rgba(255,255,255,0.08);" aria-label="Footer">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+
+        <!-- Brand -->
+        <div class="col-span-2 md:col-span-1">
+          <a href="index.html" class="flex items-center mb-4" aria-label="Emrik Refrigeration">
+            <div class="footer-logo-wrap" role="img" aria-label="Emrik Refrigeration and AC"></div>
+          </a>
+          <p class="text-slate-light text-sm mb-5" style="line-height:1.7;">Fast, reliable HVAC and refrigeration service for homes and businesses. Licensed, insured, and committed to doing the job right.</p>
+          <div class="space-y-2">
+            <a href="tel:+13613602763" class="flex items-center gap-2 text-white text-sm font-medium hover:text-cobalt transition-colors duration-150">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.54 6.54l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (361) 360-3276
+            </a>
+            <a href="mailto:emrikrefrigerationandac@gmail.com" class="flex items-center gap-2 text-slate-light text-sm hover:text-white transition-colors duration-150">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              emrikrefrigerationandac@gmail.com
+            </a>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h5 class="font-display font-700 text-white text-sm uppercase tracking-widest mb-4">Services</h5>
+          <ul class="space-y-2.5">
+            <li><a href="index.html#services" class="text-slate-light text-sm hover:text-white transition-colors duration-150">AC Repair &amp; Install</a></li>
+            <li><a href="index.html#services" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Heating Services</a></li>
+            <li><a href="index.html#services" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Preventative Maintenance</a></li>
+            <li><a href="index.html#services" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Refrigeration Repair</a></li>
+            <li><a href="index.html#services" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Commercial Refrigeration</a></li>
+            <li><a href="index.html#services" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Emergency Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h5 class="font-display font-700 text-white text-sm uppercase tracking-widest mb-4">Company</h5>
+          <ul class="space-y-2.5">
+            <li><a href="index.html#why-us" class="text-slate-light text-sm hover:text-white transition-colors duration-150">About Us</a></li>
+            <li><a href="index.html#reviews" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Reviews</a></li>
+            <li><a href="index.html#service-area" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Service Areas</a></li>
+            <li><a href="index.html#contact" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Contact</a></li>
+            <li><a href="#" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Privacy Policy</a></li>
+            <li><a href="#" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Service Area + License -->
+        <div>
+          <h5 class="font-display font-700 text-white text-sm uppercase tracking-widest mb-4">Service Area</h5>
+          <p class="text-slate-light text-sm mb-4" style="line-height:1.7;">Serving Corpus Christi, San Antonio, Victoria and surrounding areas.</p>
+          <div class="rounded-lg p-3" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);">
+            <p class="text-xs text-slate-light" style="line-height:1.6;">
+              <span class="text-white">TDLR License #TACLA144129C • EPA Universal Certified</span><br />
+              Fully Licensed &amp; Insured in Texas
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="divider mb-6"></div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-slate-light text-xs text-center sm:text-left">
+          © 2026 Emrik Refrigeration. All rights reserved.
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="#" class="text-xs text-slate-light hover:text-white transition-colors duration-150">Privacy Policy</a>
+          <span class="text-white/20">·</span>
+          <a href="#" class="text-xs text-slate-light hover:text-white transition-colors duration-150">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       SCRIPTS
+  ============================================================ -->
+  <script>
+    /* ── Nav: scrolled state ── */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    /* ── Mobile menu toggle ── */
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+
+    /* ── Scroll fade-up animations ── */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+  <!-- GHL form embed script — handles iframe height auto-adjustment -->
+  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+
+  <!-- GHL chat widget -->
+  <script
+    src="https://beta.leadconnectorhq.com/loader.js"
+    data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js"
+    data-widget-id="69f399c9509a8522bee826d2">
+  </script>
+
+  <!-- GHL external tracking -->
+  <script
+    src="https://link.msgsndr.com/js/external-tracking.js"
+    data-tracking-id="tk_9f55568aa2294367816fe4cfa1df6448">
+  </script>
+</body>
+</html>
