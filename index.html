@@ -264,6 +264,22 @@
     .hero-bg {
       background: #0A1220; /* dark fallback while video loads */
     }
+    /* Mobile static image — shown only below 768px */
+    .hero-mobile-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 58% center;
+      z-index: 0;
+      display: none; /* hidden on desktop */
+    }
+    @media (max-width: 767px) {
+      .hero-mobile-img { display: block; }
+      .hero-video { display: none; } /* prevent any residual paint */
+    }
+
     /* Video fills the entire hero, cropped to cover */
     .hero-video {
       position: absolute;
@@ -285,9 +301,7 @@
         radial-gradient(ellipse 80% 60% at 50% 85%, rgba(180,30,30,0.18) 0%, transparent 60%),
         radial-gradient(ellipse 55% 70% at 0% 50%, rgba(10,40,100,0.28) 0%, transparent 55%);
     }
-    /* Mobile: shift video right to show equipment/glow instead of static area */
     @media (max-width: 767px) {
-      .hero-video { object-position: 58% center; }
       .hero-text-block h1 { font-size: 2.15rem !important; }
     }
 
@@ -693,17 +707,26 @@
        SECTION 1: HERO
   ============================================================ -->
   <section class="hero-bg relative min-h-screen flex items-center overflow-hidden" style="padding-top: clamp(88px, 14vw, 128px); padding-bottom: clamp(56px, 8vw, 96px);" aria-label="Hero">
-    <!-- ── Video background ── -->
+    <!-- ── Mobile image background (hidden on desktop, video NOT fetched on mobile) ── -->
+    <img
+      class="hero-mobile-img"
+      src="brand_assets/hero-mobile.png"
+      alt="Premium commercial refrigeration equipment with copper piping"
+      aria-hidden="true"
+    />
+
+    <!-- ── Desktop video background (source has media query — mobile skips the fetch) ── -->
     <video
       class="hero-video"
-      src="brand_assets/Hero-background.mp4"
       autoplay
       muted
       loop
       playsinline
       preload="auto"
       aria-hidden="true"
-    ></video>
+    >
+      <source src="brand_assets/Hero-background.mp4" type="video/mp4" media="(min-width: 768px)" />
+    </video>
 
     <!-- Overlay system over video -->
     <div class="hero-video-overlay"></div>
