@@ -722,10 +722,10 @@
       muted
       loop
       playsinline
-      preload="auto"
+      preload="none"
       aria-hidden="true"
     >
-      <source src="brand_assets/Hero-background.mp4" type="video/mp4" media="(min-width: 768px)" />
+      <source src="brand_assets/Hero-background.mp4" type="video/mp4" />
     </video>
 
     <!-- Overlay system over video -->
@@ -1487,6 +1487,37 @@
   <script
     src="https://link.msgsndr.com/js/external-tracking.js"
     data-tracking-id="tk_9f55568aa2294367816fe4cfa1df6448">
+  </script>
+
+  <!-- Hero video — load and play only on desktop (≥768px) to avoid mobile download -->
+  <script>
+    (function () {
+      const video = document.querySelector('.hero-video');
+      if (!video) return;
+
+      function loadVideoIfDesktop() {
+        if (window.innerWidth >= 768 && video.readyState === 0) {
+          video.load();
+          video.play().catch(function (err) {
+            console.log('Video autoplay prevented:', err);
+          });
+        }
+      }
+
+      // Initial check on DOMContentLoaded
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadVideoIfDesktop);
+      } else {
+        loadVideoIfDesktop();
+      }
+
+      // Handle resize from mobile → desktop after page load
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(loadVideoIfDesktop, 250);
+      });
+    })();
   </script>
 </body>
 </html>
