@@ -261,11 +261,12 @@
     /* Desktop: keep hero copy on the dark left panel, clear of the photo on the right.
        Width comes from --hero-content-max (the locked standard for all service/city pages). */
     .hero-content { position:relative; max-width:var(--hero-content-max); }
-    .hero-h1 { color:#fff; font-weight:800; letter-spacing:-.035em; font-size:clamp(2.4rem,5.6vw,4.4rem); max-width:18ch; }
+    /* Hero type/spacing matched 1:1 to index.html homepage hero (locked standard) */
+    .hero-h1 { color:#fff; font-weight:800; letter-spacing:-.035em; font-size:clamp(2.6rem,6.4vw,5rem); max-width:16ch; }
     .hero-h1 .accent { color:var(--red300); }
-    .hero-sub { color:#C7D1E0; font-size:clamp(1.05rem,1.7vw,1.24rem); max-width:56ch; margin-top:1.4rem; }
-    .hero-cta-row { display:flex; flex-wrap:wrap; gap:.9rem; margin-top:2rem; }
-    .trust-row { display:flex; flex-wrap:wrap; gap:.5rem .65rem; margin-top:2.2rem; }
+    .hero-sub { color:#C7D1E0; font-size:clamp(1.05rem,1.7vw,1.28rem); max-width:54ch; margin-top:1.5rem; }
+    .hero-cta-row { display:flex; flex-wrap:wrap; gap:.9rem; margin-top:2.2rem; }
+    .trust-row { display:flex; flex-wrap:wrap; gap:.5rem .65rem; margin-top:2.4rem; }
     .trust-badge { display:inline-flex; align-items:center; gap:.45rem; font-size:.8rem; font-weight:600; color:#E7EDF6;
       background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.16); padding:.5rem .85rem; border-radius:999px; backdrop-filter:blur(4px); }
     .trust-badge svg { color:var(--red300); flex:0 0 auto; }
@@ -282,11 +283,14 @@
       .trust-row { margin-top:1.6rem; }
     }
 
-    /* ── Breadcrumb ── */
-    .crumb { position:relative; z-index:3; margin-bottom:1.1rem; font-size:.82rem; color:#9FB0C6; display:flex; gap:.5rem; align-items:center; flex-wrap:wrap; }
-    .crumb a { color:#C7D1E0; transition:color .18s ease; }
-    .crumb a:hover { color:#fff; }
-    .crumb span { color:var(--red300); }
+    /* ── Breadcrumb — faint, lightweight navigational trail (not a UI/button bar).
+       Sits quietly above the eyebrow with generous space before the headline. ── */
+    .crumb { position:relative; z-index:3; margin-bottom:2rem; font-size:.72rem; letter-spacing:.01em;
+      color:rgba(255,255,255,.34); display:flex; gap:.45rem; align-items:center; flex-wrap:wrap; }
+    .crumb a { color:rgba(255,255,255,.5); text-decoration:none; transition:color .18s ease; }
+    .crumb a:hover { color:rgba(255,255,255,.85); }
+    .crumb .sep { color:rgba(255,255,255,.22); }
+    .crumb .current { color:rgba(255,255,255,.6); }
 
     /* ── Section wrappers ── */
     .section { position:relative; padding:clamp(4.5rem,9vw,7rem) 0; }
@@ -506,7 +510,7 @@
     <div class="hero-inner">
      <div class="hero-content">
       <nav class="crumb fade-up" aria-label="Breadcrumb">
-        <a href="/">Home</a> <span>/</span> <a href="/#services">Services</a> <span>/</span> <span style="color:#fff;">AC Repair &amp; Service</span>
+        <a href="/">Home</a> <span class="sep">/</span> <a href="/#services">Services</a> <span class="sep">/</span> <span class="current">AC Repair &amp; Service</span>
       </nav>
       <span class="eyebrow on-dark fade-up" style="color:#E07C70;">AC Repair · Corpus Christi &amp; the Coastal Bend</span>
       <h1 class="hero-h1 fade-up" style="transition-delay:.07s; margin-top:1rem;">AC Repair &amp; Service in <span class="accent">Corpus Christi</span></h1>

@@ -118,6 +118,13 @@ The hero is a single dark-left / bright-equipment-right composition. Build every
 - **Left shift:** `--hero-pad-left: clamp(1.5rem, 5vw, 4rem)`. `.hero-inner` is NOT centered (`max-width:none; margin:0; padding:0 var(--pad-x) 0 var(--hero-pad-left)`) so the whole block hugs near the left edge with a clean, intentional margin.
 - **Gradient (equipment is the focal point):** `.hero-overlay` linear-gradient at ~100deg holds strong dark (≈.9 alpha) only across the left ~40% (behind the text), then fades fast — roughly `.45` at 60%, `.25` at 80%, near-clear (`.05`) at 100%. The equipment on the right must read as the bright visual focus; the left text zone must stay dark enough for white/red text to remain crisp. Keep the supporting red/cobalt radial accents.
 - **Mobile (≤767px):** `.hero-content { max-width:none; }` (full width) and `.hero-inner { padding-left:var(--pad-x); }` (symmetric padding) — the desktop left-shift and width cap do NOT apply.
+- **Type scale & spacing (IDENTICAL on every page — copy these exact values, do not diff against index.html):**
+  - **H1** (`.hero-h1`): `font-size:clamp(2.6rem,6.4vw,5rem)`; `max-width:16ch`; `font-weight:800`; `letter-spacing:-.035em`; white, `.accent` span in `--red300`.
+  - **Subhead** (`.hero-sub`): `font-size:1.28rem` (`clamp(1.05rem,1.7vw,1.28rem)`); `max-width:54ch`; `margin-top:1.5rem`; color `#C7D1E0`.
+  - **CTA row** (`.hero-cta-row`): `margin-top:2.2rem`.
+  - **Trust badges** (`.trust-row`): `margin-top:2.4rem`. Badge style (`.trust-badge`) is identical across all pages — do not restyle.
+  - **Eyebrow** (`.eyebrow`): identical across all pages — `font-size:.74rem`, `letter-spacing:.18em`, uppercase, `--red` (or `--red300` via `.on-dark`); do not restyle.
+- **Breadcrumb (subpages only — faint trail, NOT a button bar):** `.crumb` `font-size:.72rem`; `margin-bottom:2rem` (generous gap above the eyebrow); base text `rgba(255,255,255,.34)`; links `rgba(255,255,255,.5)` (hover `.85`); separators (`.sep`) `rgba(255,255,255,.22)`; current page (`.current`) `rgba(255,255,255,.6)`. Keep the BreadcrumbList JSON-LD. It must read as a quiet navigational note, never compete with the H1.
 - **Source of truth:** `--hero-content-max` and `--hero-pad-left` live in `:root` under a labeled comment; new pages inherit the pattern by carrying those two variables plus the `.hero-inner` / `.hero-content` / `.hero-overlay` rules.
 
 ### Open Items / To Confirm With Rick
