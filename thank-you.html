@@ -3,686 +3,443 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thank You — Emrik Refrigeration &amp; AC</title>
-  <meta name="description" content="Your service request has been received. Emrik Refrigeration &amp; AC will be in touch shortly." />
+
+  <title>Thank You | Emrik Refrigeration &amp; AC</title>
+  <meta name="description" content="Your message has been received. Emrik Refrigeration & AC will be in touch shortly." />
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="canonical" href="https://emrikrefrigeration.com/thank-you.html" />
-  <!-- Google Search Console verification will be added when needed -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="author" content="Emrik Refrigeration & AC" />
+
+  <meta name="theme-color" content="#0D1B30" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            navy:    { DEFAULT: '#0A1628', 800: '#0D1E36', 700: '#122540', 600: '#172D4D' },
-            charcoal:{ DEFAULT: '#1E2A3A', 700: '#253040', 600: '#2C3A4D' },
-            cobalt:  { DEFAULT: '#1A4A8C', 400: '#2B5FAA', 300: '#3D76C8', 200: '#C8D8F0' },
-            scarlet: { DEFAULT: '#C8353A', 400: '#D45C60', 300: '#DC8385' },
-            slate:   { light: '#5C6B82', muted: '#8A96A8' },
-            ink:     { DEFAULT: '#0D1F35' },
+            brand: {
+              red:    '#C2342B',
+              red700: '#9E211A',
+              red300: '#E07C70',
+              navy:   '#0D1B30',
+              ink:    '#091221',
+              navy700:'#13273F',
+              cobalt: '#1E4E8F',
+              cobalt400:'#3E73B6',
+              cobalt200:'#C2D6EE',
+              cream:  '#F8F6F1',
+              mist:   '#EDF1F7',
+              slate:  '#51607A',
+              muted:  '#8794A8',
+              inkText:'#13233B',
+            },
           },
           fontFamily: {
-            display: ['Syne', 'sans-serif'],
-            body:    ['Inter', 'sans-serif'],
+            display: ['"Bricolage Grotesque"', 'sans-serif'],
+            body:    ['"Hanken Grotesk"', 'sans-serif'],
           },
-          boxShadow: {
-            'card':    '0 2px 8px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)',
-            'card-lg': '0 8px 32px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.05)',
-            'glow':    '0 0 28px rgba(26,74,140,0.14)',
-            'cta':     '0 4px 20px rgba(200,53,58,0.30)',
-          },
-          letterSpacing: { tight: '-0.03em' },
-          lineHeight:    { body: '1.7' },
         },
       },
     };
   </script>
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: #fff; color: #0D1F35; }
-    h1,h2,h3,h4 { font-family: 'Syne', sans-serif; }
-
-    /* ── Section backgrounds ── */
-    .section-dark { background: #FFFFFF; }
-    .section-mid {
-      background:
-        radial-gradient(ellipse 100% 60% at 50% 0%, rgba(26,74,140,0.038) 0%, transparent 55%),
-        #EBF0F9;
-    }
-    .dark-section { background: #1A2F52; }
-    .dark-section .text-white  { color: #fff !important; }
-    .dark-section .text-cobalt { color: #3D76C8 !important; }
-    .dark-section .text-slate-light { color: #8FA3BE !important; }
-    .dark-section .btn-outline { color: #fff; border-color: rgba(255,255,255,0.28); }
-    .dark-section .btn-outline:hover { border-color: rgba(255,255,255,0.60); background: rgba(255,255,255,0.06); }
-    .dark-section .divider { background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent); }
-    .dark-section .section-title-accent { background: linear-gradient(90deg, transparent 0%, #C8353A 25%, #C8353A 75%, transparent 100%); }
-    .section-dark .text-white,
-    .section-mid  .text-white { color: #0D1F35; }
-    .section-dark .text-slate-light,
-    .section-mid  .text-slate-light { color: #4B5A6E; }
-
-    /* ── Divider ── */
-    .divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent 0%, rgba(26,74,140,0.12) 30%, rgba(26,74,140,0.12) 70%, transparent 100%);
+    :root {
+      --red:#C2342B; --red700:#9E211A; --red300:#E07C70;
+      --navy:#0D1B30; --ink:#091221; --navy700:#13273F;
+      --cobalt:#1E4E8F; --cobalt400:#3E73B6; --cobalt200:#C2D6EE;
+      --cream:#F8F6F1; --paper:#FFFFFF; --mist:#EDF1F7;
+      --slate:#51607A; --muted:#8794A8; --inkText:#13233B;
+      --pad-x: clamp(1.25rem, 5vw, 2rem);
+      --shadow-card: 0 1px 2px rgba(13,27,48,.04), 0 14px 34px -16px rgba(13,27,48,.22);
+      --shadow-float: 0 2px 6px rgba(13,27,48,.06), 0 30px 60px -24px rgba(13,27,48,.30);
+      --shadow-cta: 0 10px 26px -8px rgba(194,52,43,.46);
     }
 
-    /* ── Nav ── */
-    #navbar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
-      background: rgba(14,26,52,0.72);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      transition: background 0.40s cubic-bezier(0.4,0,0.2,1),
-                  border-color 0.40s cubic-bezier(0.4,0,0.2,1),
-                  box-shadow 0.40s cubic-bezier(0.4,0,0.2,1);
+    *,*::before,*::after { box-sizing:border-box; }
+    html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+    body {
+      font-family:'Hanken Grotesk',sans-serif;
+      color:var(--inkText);
+      background:var(--paper);
+      line-height:1.7;
+      margin:0;
+      overflow-x:hidden;
     }
-    #navbar .text-slate-light { color: rgba(255,255,255,0.68) !important; }
-    #navbar .hover\:text-white:hover { color: rgba(255,255,255,1) !important; }
-    #navbar #hamburger { color: rgba(255,255,255,0.80) !important; border-color: rgba(255,255,255,0.18) !important; }
-    #mobile-menu { background: rgba(20,36,68,0.95); backdrop-filter: blur(18px); }
-    #mobile-menu a.mobile-nav-link { color: rgba(255,255,255,0.68) !important; }
-    #mobile-menu a.mobile-nav-link:hover { color: rgba(255,255,255,1) !important; background: rgba(255,255,255,0.06) !important; }
-    #mobile-menu { border-top-color: rgba(255,255,255,0.08) !important; }
-    #navbar.scrolled {
-      background: rgba(255,255,255,0.72);
-      backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px);
-      border-bottom-color: rgba(13,31,53,0.07);
-      box-shadow: 0 1px 24px rgba(0,0,0,0.06);
-    }
-    #navbar.scrolled .text-slate-light { color: #5C6B82 !important; }
-    #navbar.scrolled .hover\:text-white:hover { color: #0D1F35 !important; }
-    #navbar.scrolled #hamburger { color: #0D1F35 !important; border-color: rgba(13,31,53,0.16) !important; }
-    #navbar.scrolled #mobile-menu { background: #fff; }
-    #navbar.scrolled #mobile-menu a.mobile-nav-link { color: #5C6B82 !important; }
-    #navbar.scrolled #mobile-menu a.mobile-nav-link:hover { color: #0D1F35 !important; background: rgba(13,31,53,0.04) !important; }
-    #navbar.scrolled #mobile-menu { border-top-color: rgba(13,31,53,0.08) !important; }
-    #mobile-menu { display: none; }
-    #mobile-menu.open { display: block; }
-    .nav-link { position: relative; }
-    .nav-link::after {
-      content: ''; position: absolute; bottom: -2px; left: 0;
-      width: 0; height: 2px; background: #1A4A8C;
-      transition: width 0.25s cubic-bezier(0.4,0,0.2,1);
-    }
-    .nav-link:hover::after { width: 100%; }
+    h1,h2,h3,h4 { font-family:'Bricolage Grotesque',sans-serif; line-height:1.05; margin:0; }
+    a { text-decoration:none; color:inherit; }
+    img,video { display:block; max-width:100%; }
+    ::selection { background:rgba(194,52,43,.18); }
 
-    /* ── Hero — dark, layered (no video, solid gradient) ── */
-    .thankyou-hero {
-      background:
-        radial-gradient(ellipse 80% 70% at 30% 40%, rgba(27,58,107,0.55) 0%, transparent 65%),
-        radial-gradient(ellipse 60% 50% at 80% 80%, rgba(139,26,26,0.22) 0%, transparent 55%),
-        radial-gradient(ellipse 100% 80% at 50% 100%, rgba(10,18,40,0.60) 0%, transparent 60%),
-        #0A1220;
-    }
-    /* Subtle dot grid texture */
-    .thankyou-hero-dots {
-      background-image: radial-gradient(rgba(59,118,200,0.055) 1px, transparent 1px);
-      background-size: 28px 28px;
-      -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 30%, transparent 100%);
-      mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 30%, transparent 100%);
-    }
-    /* Edge vignette */
-    .thankyou-vignette {
-      background: radial-gradient(ellipse 130% 120% at 50% 50%, transparent 30%, rgba(0,0,0,0.48) 100%);
-      pointer-events: none;
+    /* ── Grain overlay ── */
+    .grain::before {
+      content:''; position:absolute; inset:0; pointer-events:none; z-index:1;
+      opacity:.05; mix-blend-mode:overlay;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
 
-    /* Checkmark ring animation */
-    @keyframes check-pop {
-      0%   { transform: scale(0.5); opacity: 0; }
-      60%  { transform: scale(1.12); opacity: 1; }
-      100% { transform: scale(1); opacity: 1; }
+    /* ── Eyebrow ── */
+    .eyebrow {
+      display:inline-flex; align-items:center; gap:.6rem;
+      font-family:'Hanken Grotesk',sans-serif; font-weight:600;
+      font-size:.74rem; letter-spacing:.18em; text-transform:uppercase;
+      color:var(--red);
     }
-    @keyframes check-draw {
-      0%   { stroke-dashoffset: 60; }
-      100% { stroke-dashoffset: 0; }
-    }
-    @keyframes ring-pulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(26,74,140,0.40); }
-      50%       { box-shadow: 0 0 0 16px rgba(26,74,140,0); }
-    }
-    .check-icon-wrap {
-      animation: check-pop 0.60s cubic-bezier(0.34,1.56,0.64,1) both;
-      animation-delay: 0.15s;
-    }
-    .check-icon-wrap.pulse {
-      animation: check-pop 0.60s cubic-bezier(0.34,1.56,0.64,1) both 0.15s,
-                 ring-pulse 2.8s ease-in-out infinite 0.75s;
-    }
-    .check-path {
-      stroke-dasharray: 60;
-      stroke-dashoffset: 60;
-      animation: check-draw 0.45s cubic-bezier(0.4,0,0.2,1) forwards;
-      animation-delay: 0.55s;
-    }
-
-    /* ── Step cards ── */
-    .step-card {
-      background: #fff;
-      border: 1px solid rgba(26,74,140,0.09);
-      border-radius: 18px;
-      padding: 28px 24px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 6px 24px rgba(26,74,140,0.07);
-      transition: transform 0.24s cubic-bezier(0.34,1.56,0.64,1),
-                  box-shadow 0.24s cubic-bezier(0.4,0,0.2,1);
-      position: relative;
-    }
-    .step-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 18px 40px rgba(26,74,140,0.12);
-    }
-    .step-number {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 44px;
-      line-height: 1;
-      letter-spacing: -0.04em;
-      background: linear-gradient(135deg, rgba(26,74,140,0.18) 0%, rgba(26,74,140,0.06) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      user-select: none;
-      position: absolute;
-      top: 20px; right: 22px;
-    }
-
-    /* ── Trust signal row ── */
-    .trust-signal {
-      display: flex; align-items: center; gap: 14px;
-    }
-    .trust-signal-icon {
-      width: 48px; height: 48px; border-radius: 14px; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(135deg, rgba(26,74,140,0.12) 0%, rgba(26,74,140,0.06) 100%);
-      border: 1px solid rgba(26,74,140,0.16);
-      box-shadow: 0 2px 8px rgba(26,74,140,0.10), inset 0 1px 0 rgba(255,255,255,0.55);
-    }
-
-    /* ── Review card ── */
-    .review-card {
-      background: #fff;
-      border: 1px solid rgba(13,31,53,0.07);
-      border-radius: 18px;
-      padding: 36px 32px;
-      position: relative; overflow: hidden;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 28px rgba(0,0,0,0.07);
-    }
-    .review-card::before {
-      content: '\201C';
-      position: absolute; top: 12px; right: 22px;
-      font-size: 80px; line-height: 1;
-      font-family: 'Syne', sans-serif; font-weight: 800;
-      color: rgba(26,74,140,0.055);
-      pointer-events: none; user-select: none;
-    }
+    .eyebrow::before { content:''; width:26px; height:2px; background:var(--red); display:inline-block; }
+    .eyebrow.on-dark { color:var(--red300); }
+    .eyebrow.on-dark::before { background:var(--red300); }
 
     /* ── Buttons ── */
-    .btn-primary {
-      background: #C8353A; color: #fff; font-weight: 700;
-      border-radius: 8px; padding: 14px 28px; font-size: 15px;
-      letter-spacing: 0.01em;
-      box-shadow: 0 4px 18px rgba(200,53,58,0.30);
-      transition: transform 0.18s cubic-bezier(0.4,0,0.2,1),
-                  box-shadow 0.18s cubic-bezier(0.4,0,0.2,1),
-                  background 0.18s cubic-bezier(0.4,0,0.2,1);
-      display: inline-flex; align-items: center; gap: 8px;
-    }
-    .btn-primary:hover  { background: #D64045; transform: translateY(-2px); box-shadow: 0 8px 26px rgba(200,53,58,0.38); }
-    .btn-primary:active { transform: translateY(0); box-shadow: 0 2px 10px rgba(200,53,58,0.22); }
-    .btn-primary:focus-visible { outline: 2px solid #C8353A; outline-offset: 3px; }
-    .btn-outline {
-      background: transparent; color: #0D1F35; font-weight: 600;
-      border: 1.5px solid rgba(13,31,53,0.22); border-radius: 8px;
-      padding: 13px 28px; font-size: 15px;
-      transition: transform 0.18s cubic-bezier(0.4,0,0.2,1),
-                  border-color 0.18s cubic-bezier(0.4,0,0.2,1),
-                  background 0.18s cubic-bezier(0.4,0,0.2,1);
-      display: inline-flex; align-items: center; gap: 8px;
-    }
-    .btn-outline:hover  { border-color: #1A4A8C; background: rgba(26,74,140,0.05); transform: translateY(-2px); }
-    .btn-outline:active { transform: translateY(0); }
-    .btn-outline:focus-visible { outline: 2px solid #1A4A8C; outline-offset: 3px; }
-    /* Hero dark treatment for outline */
-    .thankyou-hero .btn-outline {
-      color: rgba(255,255,255,0.88);
-      border-color: rgba(255,255,255,0.22);
-    }
-    .thankyou-hero .btn-outline:hover {
-      border-color: rgba(59,118,200,0.55);
-      background: rgba(26,74,140,0.18);
+    .btn { position:relative; display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
+      font-family:'Hanken Grotesk',sans-serif; font-weight:600; font-size:.98rem;
+      padding:.95rem 1.6rem; border-radius:12px; cursor:pointer; border:1.5px solid transparent;
+      transition:transform .2s cubic-bezier(.34,1.4,.5,1), box-shadow .25s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
+      will-change:transform; }
+    .btn:active { transform:translateY(1px) scale(.99); }
+    .btn:focus-visible { outline:none; box-shadow:0 0 0 3px var(--paper), 0 0 0 5.5px var(--cobalt); }
+    .btn-primary { background:var(--red); color:#fff; box-shadow:var(--shadow-cta); }
+    .btn-primary:hover { background:var(--red700); transform:translateY(-2px); box-shadow:0 16px 34px -10px rgba(194,52,43,.55); }
+    .btn-ghost { background:rgba(255,255,255,.06); color:#fff; border-color:rgba(255,255,255,.30); backdrop-filter:blur(4px); }
+    .btn-ghost:hover { background:rgba(255,255,255,.14); border-color:rgba(255,255,255,.55); transform:translateY(-2px); }
+
+    /* ── NAV ── */
+    .nav { position:fixed; top:0; left:0; right:0; z-index:80; transition:background-color .3s ease, box-shadow .3s ease, padding .3s ease; padding:1.1rem 0; }
+    .nav.scrolled, .nav.menu-open { background:rgba(255,255,255,.94); backdrop-filter:blur(12px); box-shadow:0 1px 0 rgba(19,35,59,.08), 0 8px 30px -18px rgba(13,27,48,.4); padding:.7rem 0; }
+    .nav-inner { max-width:1200px; margin:0 auto; padding:0 var(--pad-x); display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+    .nav-logo { height:42px; width:auto; display:block; filter:brightness(0) invert(1); transition:filter .3s ease, height .3s ease; }
+    .nav.scrolled .nav-logo, .nav.menu-open .nav-logo { filter:none; }
+    .nav.scrolled .nav-logo { height:36px; }
+    .nav-links { display:flex; align-items:center; gap:.35rem; }
+    .nav-link { position:relative; font-weight:500; font-size:.95rem; color:rgba(255,255,255,.92); padding:.55rem .8rem; border-radius:9px; display:inline-flex; align-items:center; gap:.3rem; transition:color .2s ease, background-color .2s ease; }
+    .nav.scrolled .nav-link { color:var(--inkText); }
+    .nav-link:hover { color:#fff; background:rgba(255,255,255,.10); }
+    .nav.scrolled .nav-link:hover { color:var(--red); background:rgba(194,52,43,.07); }
+    .nav-link svg { transition:transform .25s ease; }
+    .has-dropdown { position:relative; }
+    .has-dropdown:hover .nav-link svg, .has-dropdown:focus-within .nav-link svg { transform:rotate(180deg); }
+    .dropdown { position:absolute; top:calc(100% + 8px); left:0; min-width:280px; background:#fff; border-radius:14px; padding:.5rem; box-shadow:var(--shadow-float); border:1px solid rgba(19,35,59,.07);
+      opacity:0; visibility:hidden; transform:translateY(8px); transition:opacity .22s ease, transform .22s ease, visibility .22s; }
+    .has-dropdown:hover .dropdown, .has-dropdown:focus-within .dropdown, .dropdown.open { opacity:1; visibility:visible; transform:translateY(0); }
+    .dd-item { display:flex; align-items:center; gap:.7rem; padding:.6rem .7rem; border-radius:9px; color:var(--inkText); font-size:.92rem; font-weight:500; transition:background-color .18s ease, color .18s ease; }
+    .dd-item:hover { background:var(--mist); color:var(--red); }
+    .dd-item .dot { width:7px; height:7px; border-radius:50%; background:var(--cobalt400); flex:0 0 auto; transition:background-color .18s ease; }
+    .dd-item:hover .dot { background:var(--red); }
+
+    /* Hamburger — morphs to X; stays in the bar above the panel */
+    .nav-toggle { display:none; position:relative; width:46px; height:46px; border-radius:12px; flex:0 0 auto; cursor:pointer;
+      background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.28); transition:background-color .25s ease, border-color .25s ease; }
+    .nav.scrolled .nav-toggle, .nav.menu-open .nav-toggle { background:var(--mist); border-color:rgba(19,35,59,.12); }
+    .nav-toggle span { position:absolute; left:12px; right:12px; height:2px; border-radius:2px; background:#fff;
+      transition:transform .3s cubic-bezier(.4,0,.2,1), opacity .2s ease, background-color .25s ease; }
+    .nav.scrolled .nav-toggle span, .nav.menu-open .nav-toggle span { background:var(--inkText); }
+    .nav-toggle span:nth-child(1){ top:15px; }
+    .nav-toggle span:nth-child(2){ top:22px; }
+    .nav-toggle span:nth-child(3){ top:29px; }
+    .nav-toggle.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2){ opacity:0; }
+    .nav-toggle.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+    .nav-toggle:focus-visible { outline:none; box-shadow:0 0 0 3px rgba(30,78,143,.5); }
+
+    /* Mobile slide-in menu (sits below the fixed bar) */
+    .mobile-panel { position:fixed; top:0; right:0; bottom:0; width:min(92vw,400px); background:var(--navy); z-index:60;
+      transform:translateX(100%); transition:transform .34s cubic-bezier(.4,0,.2,1); padding:5.5rem 1.4rem 2.4rem; overflow-y:auto;
+      box-shadow:-24px 0 60px -24px rgba(0,0,0,.5); }
+    .mobile-panel.open { transform:translateX(0); }
+    .mobile-backdrop { position:fixed; inset:0; background:rgba(9,18,33,.55); backdrop-filter:blur(2px); z-index:55; opacity:0; visibility:hidden; transition:opacity .3s ease, visibility .3s; }
+    .mobile-backdrop.open { opacity:1; visibility:visible; }
+    .m-cta { width:100%; margin-bottom:1.3rem; }
+    .m-acc { border-top:1px solid rgba(255,255,255,.09); }
+    .m-acc-btn { width:100%; min-height:52px; background:none; border:none; cursor:pointer; color:#fff;
+      font-family:'Hanken Grotesk',sans-serif; font-weight:600; font-size:1.06rem; letter-spacing:-.01em;
+      display:flex; align-items:center; justify-content:space-between; padding:.95rem .25rem; }
+    .m-acc-btn svg { color:var(--red300); transition:transform .28s ease; }
+    .m-acc.open .m-acc-btn svg { transform:rotate(180deg); }
+    .m-acc-panel { display:none; padding:.1rem .25rem .7rem; }
+    .m-acc.open .m-acc-panel { display:block; }
+    .m-acc-link { display:flex; align-items:center; gap:.65rem; min-height:46px; padding:.55rem .55rem; border-radius:9px;
+      color:#BFCAD9; font-size:.97rem; font-weight:500; transition:color .15s ease, background-color .15s ease; }
+    .m-acc-link:hover, .m-acc-link:active { color:#fff; background:rgba(255,255,255,.06); }
+    .m-acc-link .dot { width:6px; height:6px; border-radius:50%; background:var(--red300); flex:0 0 auto; }
+    .m-simple { display:flex; align-items:center; min-height:52px; padding:.95rem .25rem; border-top:1px solid rgba(255,255,255,.09);
+      color:#fff; font-weight:600; font-size:1.06rem; letter-spacing:-.01em; transition:color .15s ease; }
+    .m-simple:hover, .m-simple:active { color:var(--red300); }
+
+    @media (max-width:860px){
+      .nav-links { display:none; }
+      .nav-toggle { display:block; }
+      .nav-logo { height:34px; }
+      .nav.scrolled .nav-logo { height:32px; }
     }
 
-    /* ── Badges ── */
-    .trust-badge {
-      background: rgba(26,74,140,0.07);
-      border: 1px solid rgba(26,74,140,0.15);
-      border-radius: 100px; padding: 6px 14px;
-      font-size: 13px; font-weight: 500; color: #1A4A8C;
-      display: inline-flex; align-items: center; gap: 6px;
-    }
-    .hero-trust-badge {
-      background: rgba(59,118,200,0.12);
-      border: 1px solid rgba(59,118,200,0.25);
-      color: #C8D8F0;
-      border-radius: 100px; padding: 6px 14px;
-      font-size: 13px; font-weight: 500;
-      display: inline-flex; align-items: center; gap: 6px;
-    }
-    .section-title-accent {
-      display: inline-block; width: 64px; height: 3px;
-      background: linear-gradient(90deg, transparent 0%, #C8353A 25%, #C8353A 75%, transparent 100%);
-      border-radius: 2px; margin-bottom: 12px;
-    }
+    /* ── THANK YOU PANEL ── */
+    .ty { position:relative; min-height:100svh; display:flex; align-items:center; justify-content:center; text-align:center;
+      background:var(--ink); overflow:hidden; padding:clamp(8rem,16vw,10rem) var(--pad-x) clamp(4rem,8vw,6rem); }
+    .ty-overlay { position:absolute; inset:0; z-index:1;
+      background:
+        radial-gradient(90% 80% at 50% 0%, rgba(30,78,143,.28) 0%, transparent 55%),
+        radial-gradient(80% 90% at 50% 100%, rgba(194,52,43,.20) 0%, transparent 55%); }
+    .ty-vignette { position:absolute; inset:0; z-index:1; pointer-events:none;
+      box-shadow:inset 0 -120px 140px -60px rgba(9,18,33,.9), inset 0 80px 140px -60px rgba(9,18,33,.6); }
+    .ty-inner { position:relative; z-index:3; max-width:42rem; }
+    .ty-badge { width:84px; height:84px; margin:0 auto 1.8rem; border-radius:24px;
+      display:flex; align-items:center; justify-content:center; color:#fff;
+      background:linear-gradient(150deg, var(--red), var(--red700));
+      box-shadow:0 18px 40px -14px rgba(194,52,43,.6); }
+    .ty-h1 { color:#fff; font-weight:800; letter-spacing:-.035em; font-size:clamp(2.4rem,6vw,4rem); }
+    .ty-sub { color:#C7D1E0; font-size:clamp(1.05rem,1.7vw,1.22rem); max-width:38rem; margin:1.3rem auto 0; }
+    .ty-phone { display:inline-flex; align-items:center; gap:.6rem; margin-top:1.6rem;
+      font-family:'Bricolage Grotesque',sans-serif; font-weight:700; letter-spacing:-.01em;
+      font-size:1.35rem; color:#fff; transition:color .2s ease; }
+    .ty-phone svg { color:var(--red300); flex:0 0 auto; }
+    .ty-phone:hover { color:var(--red300); }
+    .ty-phone-note { color:#93A1B6; font-size:.9rem; margin-top:.4rem; }
+    .ty-cta-row { display:flex; flex-wrap:wrap; gap:.9rem; justify-content:center; margin-top:2.4rem; }
 
-    /* ── Phone pulse ── */
-    .phone-pulse { animation: pulse-ring 2.5s cubic-bezier(0.4,0,0.6,1) infinite; }
-    @keyframes pulse-ring {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(200,53,58,0.4); }
-      50%       { box-shadow: 0 0 0 10px rgba(200,53,58,0); }
-    }
+    /* ── FOOTER ── */
+    .footer { background:var(--ink); color:#9AA8BC; padding:4.5rem 0 2rem; position:relative; }
+    .footer-grid { display:grid; grid-template-columns:1fr; gap:2.5rem; }
+    @media (min-width:760px){ .footer-grid{ grid-template-columns:1.6fr 1fr 1fr 1.1fr; gap:2rem; } }
+    .footer-logo { height:34px; filter:brightness(0) invert(1); margin-bottom:1.1rem; }
+    .foot-title { color:#fff; font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:.95rem; letter-spacing:.02em; margin-bottom:1rem; }
+    .foot-link { display:block; padding:.32rem 0; color:#9AA8BC; font-size:.92rem; transition:color .18s ease, transform .18s ease; }
+    .foot-link:hover { color:#fff; transform:translateX(3px); }
+    .foot-bottom { border-top:1px solid rgba(255,255,255,.09); margin-top:3rem; padding-top:1.6rem; display:flex; flex-wrap:wrap; gap:.6rem 1.5rem; justify-content:space-between; align-items:center; font-size:.82rem; color:#74839A; }
+    .lic-chip { display:inline-flex; align-items:center; gap:.45rem; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:999px; padding:.35rem .8rem; color:#C2D0E0; font-size:.78rem; font-weight:600; }
+    .footer .container { max-width:1200px; margin:0 auto; padding:0 var(--pad-x); }
 
-    /* ── Scroll fade-up ── */
-    .fade-up {
-      opacity: 0; transform: translateY(24px);
-      transition: opacity 0.55s cubic-bezier(0.4,0,0.2,1),
-                  transform 0.55s cubic-bezier(0.4,0,0.2,1);
-    }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-    /* ── Stars ── */
-    .stars { color: #F59E0B; letter-spacing: 1px; }
-
-    /* ── Logo ── */
-    .nav-logo-wrap {
-      width: 160px; height: 72px; flex-shrink: 0;
-      background: url('brand_assets/emrik-logo.png') center center / 340px auto no-repeat;
-    }
-    #navbar .nav-logo-wrap { filter: invert(1) contrast(2) brightness(1.05); }
-    #navbar.scrolled .nav-logo-wrap { filter: none; }
-    @media (min-width: 768px) {
-      .nav-logo-wrap { width: 240px; height: 104px; background-size: 510px auto; }
-    }
-    .footer-logo-wrap {
-      width: 200px; height: 90px;
-      background: url('brand_assets/emrik-logo.png') center center / 420px auto no-repeat;
-      filter: invert(1) brightness(1.1); flex-shrink: 0;
-    }
-    @media (min-width: 768px) {
-      .footer-logo-wrap { width: 260px; height: 117px; background-size: 550px auto; }
-    }
-
-    /* ── Scrollbar ── */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #F4F7FA; }
-    ::-webkit-scrollbar-thumb { background: #D0D8E4; border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: #1A4A8C; }
+    /* ── Reveal animation ── */
+    .fade-up { opacity:0; transform:translateY(26px); transition:opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
+    .fade-up.visible { opacity:1; transform:none; }
+    @media (prefers-reduced-motion:reduce){ .fade-up{ opacity:1; transform:none; transition:none; } html{ scroll-behavior:auto; } }
   </style>
 </head>
-<body class="font-body leading-body">
+<body>
 
-  <!-- ============================================================
-       STICKY NAVIGATION (exact copy from index.html)
-  ============================================================ -->
-  <nav id="navbar" class="py-2">
-    <div class="max-w-6xl mx-auto px-5 flex items-center justify-between">
-      <a href="index.html" class="flex items-center group" aria-label="Emrik Refrigeration home">
-        <div class="nav-logo-wrap" role="img" aria-label="Emrik Refrigeration and AC"></div>
+  <!-- ============================================================ NAV ============================================================ -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" aria-label="Emrik Refrigeration and AC — home">
+        <img src="/brand_assets/emrik-logo-wordmark.png" alt="Emrik Refrigeration & AC" class="nav-logo" />
       </a>
-      <div class="hidden md:flex items-center gap-7">
-        <a href="index.html#services" class="nav-link text-sm font-medium text-slate-light hover:text-white transition-colors duration-150">Services</a>
-        <a href="index.html#why-us" class="nav-link text-sm font-medium text-slate-light hover:text-white transition-colors duration-150">Why Us</a>
-        <a href="index.html#reviews" class="nav-link text-sm font-medium text-slate-light hover:text-white transition-colors duration-150">Reviews</a>
-        <a href="index.html#contact" class="nav-link text-sm font-medium text-slate-light hover:text-white transition-colors duration-150">Contact</a>
-        <a href="tel:+13613603276" class="btn-primary text-sm py-2.5 px-5 phone-pulse ml-4">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.54 6.54l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          (361) 360-3276
+
+      <nav class="nav-links" aria-label="Primary">
+        <div class="has-dropdown">
+          <a href="/#services" class="nav-link" aria-haspopup="true">Services
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown" role="menu">
+            <a class="dd-item" role="menuitem" href="/services/ac-repair-service.html"><span class="dot"></span>AC Repair &amp; Service</a>
+            <a class="dd-item" role="menuitem" href="/services/ac-installation-replacement.html"><span class="dot"></span>AC Installation &amp; Replacement</a>
+            <a class="dd-item" role="menuitem" href="/services/commercial-refrigeration-repair.html"><span class="dot"></span>Commercial Refrigeration Repair</a>
+            <a class="dd-item" role="menuitem" href="/services/commercial-hvac-service.html"><span class="dot"></span>Commercial HVAC Service</a>
+            <a class="dd-item" role="menuitem" href="/services/heating-repair-installation.html"><span class="dot"></span>Heating Repair &amp; Installation</a>
+            <a class="dd-item" role="menuitem" href="/services/ac-maintenance-tune-up.html"><span class="dot"></span>AC Maintenance &amp; Tune-Up</a>
+          </div>
+        </div>
+
+        <div class="has-dropdown">
+          <a href="/#areas" class="nav-link" aria-haspopup="true">Areas We Serve
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown" role="menu">
+            <a class="dd-item" role="menuitem" href="/areas/corpus-christi.html"><span class="dot"></span>Corpus Christi</a>
+            <a class="dd-item" role="menuitem" href="/areas/portland.html"><span class="dot"></span>Portland</a>
+            <a class="dd-item" role="menuitem" href="/areas/rockport.html"><span class="dot"></span>Rockport</a>
+            <a class="dd-item" role="menuitem" href="/areas/aransas-pass.html"><span class="dot"></span>Aransas Pass</a>
+            <a class="dd-item" role="menuitem" href="/areas/calallen.html"><span class="dot"></span>Calallen</a>
+            <a class="dd-item" role="menuitem" href="/areas/ingleside.html"><span class="dot"></span>Ingleside</a>
+            <a class="dd-item" role="menuitem" href="/areas/robstown.html"><span class="dot"></span>Robstown</a>
+          </div>
+        </div>
+
+        <a href="/about.html" class="nav-link">About</a>
+        <a href="/#contact" class="nav-link">Contact</a>
+        <a href="tel:+13613603276" class="btn btn-primary" style="margin-left:.6rem; padding:.7rem 1.2rem; font-size:.92rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call Now
         </a>
-      </div>
-      <button id="hamburger" class="md:hidden p-2 rounded-lg border border-white/10 text-white hover:border-cobalt/40 transition-colors duration-150 focus-visible:outline-cobalt" aria-label="Open menu">
-        <svg id="hamburger-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <line x1="3" y1="6" x2="21" y2="6"/>
-          <line x1="3" y1="12" x2="21" y2="12"/>
-          <line x1="3" y1="18" x2="21" y2="18"/>
-        </svg>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mPanel">
+        <span></span><span></span><span></span>
       </button>
     </div>
-    <div id="mobile-menu" class="md:hidden px-5 pb-4 mt-3 border-t border-white/10">
-      <div class="flex flex-col gap-1 pt-4">
-        <a href="index.html#services" class="mobile-nav-link py-3 px-3 rounded-lg text-slate-light hover:text-white hover:bg-white/5 transition-colors duration-150 font-medium">Services</a>
-        <a href="index.html#why-us" class="mobile-nav-link py-3 px-3 rounded-lg text-slate-light hover:text-white hover:bg-white/5 transition-colors duration-150 font-medium">Why Us</a>
-        <a href="index.html#reviews" class="mobile-nav-link py-3 px-3 rounded-lg text-slate-light hover:text-white hover:bg-white/5 transition-colors duration-150 font-medium">Reviews</a>
-        <a href="index.html#contact" class="mobile-nav-link py-3 px-3 rounded-lg text-slate-light hover:text-white hover:bg-white/5 transition-colors duration-150 font-medium">Contact</a>
-        <a href="tel:+13613603276" class="btn-primary mt-3 justify-center">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.54 6.54l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Call (361) 360-3276
-        </a>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-backdrop" id="mBackdrop"></div>
+  <aside class="mobile-panel" id="mPanel" aria-label="Mobile menu">
+    <a href="tel:+13613603276" class="btn btn-primary m-cta">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call (361) 360-3276
+    </a>
+
+    <div class="m-acc">
+      <button class="m-acc-btn" type="button" aria-expanded="false">Services
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="m-acc-panel">
+        <a class="m-acc-link" href="/services/ac-repair-service.html"><span class="dot"></span>AC Repair &amp; Service</a>
+        <a class="m-acc-link" href="/services/ac-installation-replacement.html"><span class="dot"></span>AC Installation &amp; Replacement</a>
+        <a class="m-acc-link" href="/services/commercial-refrigeration-repair.html"><span class="dot"></span>Commercial Refrigeration Repair</a>
+        <a class="m-acc-link" href="/services/commercial-hvac-service.html"><span class="dot"></span>Commercial HVAC Service</a>
+        <a class="m-acc-link" href="/services/heating-repair-installation.html"><span class="dot"></span>Heating Repair &amp; Installation</a>
+        <a class="m-acc-link" href="/services/ac-maintenance-tune-up.html"><span class="dot"></span>AC Maintenance &amp; Tune-Up</a>
       </div>
     </div>
-  </nav>
 
-  <!-- ============================================================
-       HERO — Thank You confirmation
-  ============================================================ -->
-  <section class="thankyou-hero relative overflow-hidden flex items-center" style="min-height: 100svh; padding-top: clamp(96px, 15vw, 140px); padding-bottom: clamp(64px, 9vw, 108px);" aria-label="Thank you confirmation">
-    <!-- Dot texture -->
-    <div class="thankyou-hero-dots absolute inset-0 z-0"></div>
-    <!-- Vignette -->
-    <div class="thankyou-vignette absolute inset-0 z-[1]"></div>
-    <!-- Red accent at bottom -->
-    <div class="absolute bottom-0 left-0 right-0 z-20" style="height:4px; background: linear-gradient(90deg, transparent 0%, #C8353A 18%, #C8353A 82%, transparent 100%); opacity:0.88;"></div>
+    <div class="m-acc">
+      <button class="m-acc-btn" type="button" aria-expanded="false">Areas We Serve
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="m-acc-panel">
+        <a class="m-acc-link" href="/areas/corpus-christi.html"><span class="dot"></span>Corpus Christi</a>
+        <a class="m-acc-link" href="/areas/portland.html"><span class="dot"></span>Portland</a>
+        <a class="m-acc-link" href="/areas/rockport.html"><span class="dot"></span>Rockport</a>
+        <a class="m-acc-link" href="/areas/aransas-pass.html"><span class="dot"></span>Aransas Pass</a>
+        <a class="m-acc-link" href="/areas/calallen.html"><span class="dot"></span>Calallen</a>
+        <a class="m-acc-link" href="/areas/ingleside.html"><span class="dot"></span>Ingleside</a>
+        <a class="m-acc-link" href="/areas/robstown.html"><span class="dot"></span>Robstown</a>
+      </div>
+    </div>
 
-    <div class="relative z-10 max-w-3xl mx-auto px-5 w-full text-center">
+    <a class="m-simple" href="/about.html">About</a>
+    <a class="m-simple" href="/#contact">Contact</a>
+  </aside>
 
-      <!-- Animated checkmark -->
-      <div class="flex justify-center mb-8">
-        <div class="check-icon-wrap pulse w-24 h-24 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, rgba(26,74,140,0.28) 0%, rgba(26,74,140,0.14) 100%); border: 2px solid rgba(61,118,200,0.40); box-shadow: 0 0 0 8px rgba(26,74,140,0.10), 0 8px 32px rgba(26,74,140,0.28);">
-          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path class="check-path" d="M10 22 L19 31 L34 14" stroke="#6CA3E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
+  <!-- ============================================================ THANK YOU ============================================================ -->
+  <main class="ty grain" aria-label="Message received confirmation">
+    <div class="ty-overlay"></div>
+    <div class="ty-vignette"></div>
+
+    <div class="ty-inner">
+      <div class="ty-badge fade-up">
+        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <span class="eyebrow on-dark fade-up" style="transition-delay:.05s;">Message Received</span>
+      <h1 class="ty-h1 fade-up" style="transition-delay:.1s; margin-top:1rem;">We Got Your Message.</h1>
+      <p class="ty-sub fade-up" style="transition-delay:.16s;">
+        Thanks for reaching out. Someone from Emrik will be in touch shortly — we answer 24/7, so you won't be left waiting. If it's urgent and you need help right now, call us directly.
+      </p>
+
+      <div class="fade-up" style="transition-delay:.22s;">
+        <a href="tel:+13613603276" class="ty-phone">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (361) 360-3276
+        </a>
+        <div class="ty-phone-note">Open 24/7 · Corpus Christi &amp; the Coastal Bend</div>
       </div>
 
-      <!-- Headline -->
-      <h1 class="font-display font-800 text-white mb-4" style="font-size: clamp(2.4rem, 6vw, 3.6rem); letter-spacing: -0.03em; line-height: 1.08; text-shadow: 0 2px 24px rgba(0,0,0,0.40);">
-        We Got Your Request!
-      </h1>
-
-      <!-- Subheadline -->
-      <p class="font-display font-600 mb-5" style="font-size: clamp(1.1rem, 2.5vw, 1.35rem); color: #6CA3E8; letter-spacing: -0.01em; line-height: 1.4;">
-        Someone from Emrik Refrigeration &amp; AC will be in touch with you shortly.
-      </p>
-
-      <!-- Body copy -->
-      <p class="mb-10 max-w-lg mx-auto" style="color: rgba(255,255,255,0.80); font-size: clamp(0.95rem, 2vw, 1.05rem); line-height: 1.74; text-shadow: 0 1px 8px rgba(0,0,0,0.30);">
-        In the meantime, if you need immediate assistance — especially for emergency AC or refrigeration issues — don't hesitate to call us directly.
-      </p>
-
-      <!-- CTAs -->
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="tel:+13613603276" class="btn-primary text-base px-8 py-4 phone-pulse">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.54 6.54l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Call Now — (361) 360-3276
-        </a>
-        <a href="index.html" class="btn-outline text-base px-8 py-4">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+      <div class="ty-cta-row fade-up" style="transition-delay:.28s;">
+        <a href="/" class="btn btn-primary">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           Back to Home
         </a>
       </div>
-
     </div>
-  </section>
+  </main>
 
-  <!-- ============================================================
-       TRUST SIGNALS
-  ============================================================ -->
-  <section class="section-dark py-14" aria-label="Trust signals">
-    <div class="max-w-5xl mx-auto px-5">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-up">
-
-        <!-- Licensed -->
-        <div class="trust-signal p-5 rounded-2xl" style="background: linear-gradient(135deg, rgba(26,74,140,0.05) 0%, rgba(26,74,140,0.02) 100%); border: 1px solid rgba(26,74,140,0.10);">
-          <div class="trust-signal-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <div>
-            <div class="font-display font-700 text-ink text-base mb-0.5">Licensed &amp; Insured</div>
-            <div class="text-sm" style="color: #4B5A6E; line-height: 1.5;">TDLR License #TACLA144129C</div>
-          </div>
-        </div>
-
-        <!-- 24/7 -->
-        <div class="trust-signal p-5 rounded-2xl" style="background: linear-gradient(135deg, rgba(26,74,140,0.05) 0%, rgba(26,74,140,0.02) 100%); border: 1px solid rgba(26,74,140,0.10);">
-          <div class="trust-signal-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <div>
-            <div class="font-display font-700 text-ink text-base mb-0.5">24/7 Emergency Service</div>
-            <div class="text-sm" style="color: #4B5A6E; line-height: 1.5;">We're always available</div>
-          </div>
-        </div>
-
-        <!-- EPA -->
-        <div class="trust-signal p-5 rounded-2xl" style="background: linear-gradient(135deg, rgba(26,74,140,0.05) 0%, rgba(26,74,140,0.02) 100%); border: 1px solid rgba(26,74,140,0.10);">
-          <div class="trust-signal-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <div>
-            <div class="font-display font-700 text-ink text-base mb-0.5">EPA Universal Certified</div>
-            <div class="text-sm" style="color: #4B5A6E; line-height: 1.5;">Professional grade service</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       WHAT HAPPENS NEXT — 3-step process
-  ============================================================ -->
-  <section class="section-mid py-20" aria-label="What happens next">
-    <div class="max-w-5xl mx-auto px-5">
-
-      <div class="text-center mb-12 fade-up">
-        <div class="flex justify-center mb-3">
-          <div class="section-title-accent"></div>
-        </div>
-        <h2 class="font-display font-700 text-white mb-3" style="font-size: clamp(1.9rem, 4vw, 2.8rem); letter-spacing: -0.03em;">
-          What Happens Next
-        </h2>
-        <p class="text-slate-light text-base max-w-md mx-auto" style="line-height: 1.7;">
-          Here's exactly what to expect after you submit.
-        </p>
-      </div>
-
-      <!-- Steps grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 relative">
-
-        <!-- Connector line — desktop only -->
-        <div class="hidden md:block absolute top-12 left-1/4 right-1/4 h-px" style="background: linear-gradient(90deg, transparent 0%, rgba(26,74,140,0.18) 20%, rgba(26,74,140,0.18) 80%, transparent 100%); z-index: 0;"></div>
-
-        <!-- Step 1 -->
-        <div class="step-card fade-up">
-          <div class="step-number">01</div>
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background: linear-gradient(135deg, rgba(26,74,140,0.14) 0%, rgba(26,74,140,0.07) 100%); border: 1px solid rgba(26,74,140,0.18);">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-          </div>
-          <h3 class="font-display font-700 text-ink mb-2" style="font-size: 18px;">We review your request</h3>
-          <p class="text-sm" style="color: #4B5A6E; line-height: 1.7;">Our team reviews the details you provided so we come prepared with the right parts and expertise.</p>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="step-card fade-up" style="transition-delay: 0.08s;">
-          <div class="step-number">02</div>
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background: linear-gradient(135deg, rgba(200,53,58,0.12) 0%, rgba(200,53,58,0.06) 100%); border: 1px solid rgba(200,53,58,0.18);">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C8353A" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.54 6.54l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </div>
-          <h3 class="font-display font-700 text-ink mb-2" style="font-size: 18px;">We reach out to schedule</h3>
-          <p class="text-sm" style="color: #4B5A6E; line-height: 1.7;">Expect a call or text from us to confirm a time that works for you — often same or next day.</p>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="step-card fade-up" style="transition-delay: 0.16s;">
-          <div class="step-number">03</div>
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background: linear-gradient(135deg, rgba(26,74,140,0.14) 0%, rgba(26,74,140,0.07) 100%); border: 1px solid rgba(26,74,140,0.18);">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-          </div>
-          <h3 class="font-display font-700 text-ink mb-2" style="font-size: 18px;">We show up and get it done</h3>
-          <p class="text-sm" style="color: #4B5A6E; line-height: 1.7;">Our technician arrives on time, diagnoses the issue, and gets your system back up — straight answers, no runaround.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       REVIEW TEASER — Stephanie Jernigan
-  ============================================================ -->
-  <section class="section-dark py-16" aria-label="Customer review">
-    <div class="max-w-2xl mx-auto px-5">
-
-      <div class="text-center mb-8 fade-up">
-        <p class="text-sm font-600 uppercase tracking-widest" style="color: #8A96A8; letter-spacing: 0.12em;">Don't just take our word for it</p>
-      </div>
-
-      <!-- Review card — section-dark uses white bg cards -->
-      <div class="fade-up" style="transition-delay: 0.06s;">
-        <div class="review-card">
-          <div class="stars text-base mb-4">★★★★★</div>
-          <p class="text-ink text-base mb-6" style="line-height: 1.74;">
-            "The level of professionalism this company upholds is something I can hardly put into words. In the heat of summer my AC went out — I called Emrik and they were out the same day. They found the exact problem, ordered the part, and Rick was in my home installing it the same day it arrived. Haven't had an issue since. Unbeatable pricing."
-          </p>
-          <div class="flex items-center gap-3 pt-5 border-t" style="border-color: rgba(13,31,53,0.08);">
-            <div class="w-10 h-10 rounded-full flex items-center justify-center font-display font-700 text-sm flex-shrink-0" style="background: linear-gradient(135deg, #1A4A8C, #2B5FAA); color: #fff;">SJ</div>
-            <div>
-              <div class="font-semibold text-ink text-sm">Stephanie Jernigan</div>
-              <div class="text-xs" style="color: #5C6B82;">Google Review</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Link to all reviews -->
-      <div class="text-center mt-6 fade-up" style="transition-delay: 0.12s;">
-        <a href="https://www.google.com/search?q=Emrik+Refrigeration+reviews" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm hover:text-ink transition-colors duration-150" style="color: #5C6B82;">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          See all reviews on Google
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ============================================================
-       FOOTER (exact copy from index.html)
-  ============================================================ -->
-  <footer class="dark-section pt-16 pb-8 border-t" style="border-color: rgba(255,255,255,0.08);" aria-label="Footer">
-    <div class="max-w-6xl mx-auto px-5">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-
-        <!-- Brand -->
-        <div class="col-span-2 md:col-span-1">
-          <a href="index.html" class="flex items-center mb-4" aria-label="Emrik Refrigeration">
-            <div class="footer-logo-wrap" role="img" aria-label="Emrik Refrigeration and AC"></div>
-          </a>
-          <p class="text-slate-light text-sm mb-5" style="line-height:1.7;">Fast, reliable HVAC and refrigeration service for homes and businesses. Licensed, insured, and committed to doing the job right.</p>
-          <div class="space-y-2">
-            <a href="tel:+13613603276" class="flex items-center gap-2 text-white text-sm font-medium hover:text-cobalt transition-colors duration-150">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.54 6.54l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              (361) 360-3276
-            </a>
-            <a href="mailto:emrikrefrigerationandac@gmail.com" class="flex items-center gap-2 text-slate-light text-sm hover:text-white transition-colors duration-150">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4A8C" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              emrikrefrigerationandac@gmail.com
-            </a>
-          </div>
-        </div>
-
-        <!-- Services -->
+  <!-- ============================================================ FOOTER ============================================================ -->
+  <footer class="footer grain">
+    <div class="container">
+      <div class="footer-grid">
         <div>
-          <h5 class="font-display font-700 text-white text-sm uppercase tracking-widest mb-4">Services</h5>
-          <ul class="space-y-2.5">
-            <li><a href="index.html#services" class="text-slate-light text-sm hover:text-white transition-colors duration-150">AC Repair &amp; Install</a></li>
-            <li><a href="index.html#services" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Heating Services</a></li>
-            <li><a href="index.html#services" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Preventative Maintenance</a></li>
-            <li><a href="index.html#services" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Refrigeration Repair</a></li>
-            <li><a href="index.html#services" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Commercial Refrigeration</a></li>
-            <li><a href="index.html#services" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Emergency Service</a></li>
-          </ul>
-        </div>
-
-        <!-- Company -->
-        <div>
-          <h5 class="font-display font-700 text-white text-sm uppercase tracking-widest mb-4">Company</h5>
-          <ul class="space-y-2.5">
-            <li><a href="index.html#why-us" class="text-slate-light text-sm hover:text-white transition-colors duration-150">About Us</a></li>
-            <li><a href="index.html#reviews" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Reviews</a></li>
-            <li><a href="index.html#service-area" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Service Areas</a></li>
-            <li><a href="index.html#contact" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Contact</a></li>
-            <li><a href="#" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Privacy Policy</a></li>
-            <li><a href="#" class="text-slate-light text-sm hover:text-white transition-colors duration-150">Terms of Service</a></li>
-          </ul>
-        </div>
-
-        <!-- Service Area + License -->
-        <div>
-          <h5 class="font-display font-700 text-white text-sm uppercase tracking-widest mb-4">Service Area</h5>
-          <p class="text-slate-light text-sm mb-4" style="line-height:1.7;">Serving Corpus Christi, San Antonio, Victoria and surrounding areas.</p>
-          <div class="rounded-lg p-3" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);">
-            <p class="text-xs text-slate-light" style="line-height:1.6;">
-              <span class="text-white">TDLR License #TACLA144129C • EPA Universal Certified</span><br />
-              Fully Licensed &amp; Insured in Texas
-            </p>
+          <img src="/brand_assets/emrik-logo-wordmark.png" alt="Emrik Refrigeration & AC" class="footer-logo" />
+          <p style="font-size:.92rem; max-width:30ch; color:#9AA8BC;">HVAC and commercial refrigeration for Corpus Christi and the Coastal Bend. Straight answers, no BS, no hidden costs.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1.2rem;">
+            <span class="lic-chip"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E07C70" stroke-width="2.2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>TDLR #TACLA144129C</span>
+            <span class="lic-chip"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E07C70" stroke-width="2.2"><circle cx="12" cy="12" r="9"/></svg>EPA Universal Certified</span>
           </div>
         </div>
 
+        <div>
+          <div class="foot-title">Services</div>
+          <a class="foot-link" href="/services/ac-repair-service.html">AC Repair &amp; Service</a>
+          <a class="foot-link" href="/services/ac-installation-replacement.html">AC Installation &amp; Replacement</a>
+          <a class="foot-link" href="/services/commercial-refrigeration-repair.html">Commercial Refrigeration Repair</a>
+          <a class="foot-link" href="/services/commercial-hvac-service.html">Commercial HVAC Service</a>
+          <a class="foot-link" href="/services/heating-repair-installation.html">Heating Repair &amp; Installation</a>
+          <a class="foot-link" href="/services/ac-maintenance-tune-up.html">AC Maintenance &amp; Tune-Up</a>
+        </div>
+
+        <div>
+          <div class="foot-title">Areas We Serve</div>
+          <a class="foot-link" href="/areas/corpus-christi.html">Corpus Christi</a>
+          <a class="foot-link" href="/areas/portland.html">Portland</a>
+          <a class="foot-link" href="/areas/rockport.html">Rockport</a>
+          <a class="foot-link" href="/areas/aransas-pass.html">Aransas Pass</a>
+          <a class="foot-link" href="/areas/calallen.html">Calallen</a>
+          <a class="foot-link" href="/areas/ingleside.html">Ingleside</a>
+          <a class="foot-link" href="/areas/robstown.html">Robstown</a>
+        </div>
+
+        <div>
+          <div class="foot-title">Get In Touch</div>
+          <a class="foot-link" href="tel:+13613603276" style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; color:#fff; font-size:1.15rem;">(361) 360-3276</a>
+          <a class="foot-link" href="mailto:emrikrefrigerationandac@gmail.com" style="word-break:break-all;">emrikrefrigerationandac@gmail.com</a>
+          <div class="foot-link" style="cursor:default;">Open 24/7 — We Answer</div>
+          <a class="foot-link" href="/about.html">About Emrik</a>
+          <a class="foot-link" href="/#contact">Contact / Free Quote</a>
+        </div>
       </div>
 
-      <div class="divider mb-6"></div>
-
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
-        <p class="text-slate-light text-xs text-center sm:text-left">
-          © 2026 Emrik Refrigeration. All rights reserved.
-        </p>
-        <div class="flex items-center gap-4">
-          <a href="#" class="text-xs text-slate-light hover:text-white transition-colors duration-150">Privacy Policy</a>
-          <span class="text-white/20">·</span>
-          <a href="#" class="text-xs text-slate-light hover:text-white transition-colors duration-150">Terms</a>
-        </div>
+      <div class="foot-bottom">
+        <span>© 2025 Emrik Refrigeration &amp; AC. All rights reserved.</span>
+        <span>Licensed &amp; insured in Texas · TDLR #TACLA144129C · EPA Universal Certified</span>
       </div>
     </div>
   </footer>
 
-  <!-- ============================================================
-       SCRIPTS
-  ============================================================ -->
+  <!-- ============================================================ SITE SCRIPTS ============================================================ -->
   <script>
-    /* ── Nav: scrolled state ── */
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 20);
-    }, { passive: true });
+    // Nav: solid on scroll
+    (function () {
+      var nav = document.getElementById('nav');
+      function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 40); }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
 
-    /* ── Mobile menu toggle ── */
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-    });
-
-    /* ── Scroll fade-up animations ── */
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
+    // Mobile menu (hamburger morphs to X; bar stays above the slide-in panel)
+    (function () {
+      var nav = document.getElementById('nav'),
+          t = document.getElementById('navToggle'),
+          p = document.getElementById('mPanel'),
+          b = document.getElementById('mBackdrop');
+      function open() {
+        t.classList.add('open'); p.classList.add('open'); b.classList.add('open'); nav.classList.add('menu-open');
+        t.setAttribute('aria-label','Close menu'); t.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden';
+      }
+      function close() {
+        t.classList.remove('open'); p.classList.remove('open'); b.classList.remove('open'); nav.classList.remove('menu-open');
+        t.setAttribute('aria-label','Open menu'); t.setAttribute('aria-expanded','false'); document.body.style.overflow='';
+      }
+      t.addEventListener('click', function () { t.classList.contains('open') ? close() : open(); });
+      b.addEventListener('click', close);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && t.classList.contains('open')) close(); });
+      p.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', close); });
+      p.querySelectorAll('.m-acc-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var acc = btn.parentElement, willOpen = !acc.classList.contains('open');
+          acc.classList.toggle('open', willOpen);
+          btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        });
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    })();
 
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-  </script>
-
-  <!-- GHL form embed script — handles iframe height auto-adjustment -->
-  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
-
-  <!-- GHL chat widget -->
-  <script
-    src="https://beta.leadconnectorhq.com/loader.js"
-    data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js"
-    data-widget-id="69f399c9509a8522bee826d2">
-  </script>
-
-  <!-- GHL external tracking -->
-  <script
-    src="https://link.msgsndr.com/js/external-tracking.js"
-    data-tracking-id="tk_9f55568aa2294367816fe4cfa1df6448">
+    // Scroll fade-up
+    (function () {
+      var els = document.querySelectorAll('.fade-up');
+      if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('visible'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      els.forEach(function (e) { io.observe(e); });
+    })();
   </script>
 </body>
 </html>
